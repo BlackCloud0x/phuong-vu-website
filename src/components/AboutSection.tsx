@@ -1,6 +1,6 @@
 import pixelAvatar from "@/assets/pixel-avatar.png";
 const AboutSection = () => {
-  return <section id="about" className="py-20 px-6 relative bg-zinc-900 dark:bg-zinc-900">
+  return <section id="about" className="py-20 px-6 relative bg-background">
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row gap-8 items-start justify-center max-w-5xl mx-auto">
           {/* Avatar */}
@@ -16,8 +16,8 @@ const AboutSection = () => {
 
           {/* About Content */}
           <div className="glass-card p-8 rounded-2xl flex-1 min-h-[200px] flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
-            <div className="space-y-6 text-lg text-white/90 leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Me</h2>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 I'm a passionate Software Engineer with a love for creating elegant 
                 solutions to complex problems. With a focus on web technologies and 
@@ -32,7 +32,7 @@ const AboutSection = () => {
             
             {/* Skills */}
             <div className="mt-8">
-              <h3 className="text-xl font-semibold text-white mb-4">Core Skills</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Core Skills</h3>
               <div className="flex flex-wrap gap-3">
                 {["React", "TypeScript", "Node.js", "Product Strategy", "UI/UX Design"].map((skill) => (
                   <span key={skill} className="px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-full text-sm font-medium backdrop-blur-sm">

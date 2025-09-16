@@ -42,13 +42,13 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section id="blog" className="py-20 px-6 relative bg-zinc-900 dark:bg-zinc-900">
+    <section id="blog" className="py-20 px-6 relative bg-background">
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Latest Articles
           </h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Insights and thoughts on product management, technology, and digital innovation.
           </p>
         </div>
@@ -60,28 +60,28 @@ const BlogSection = () => {
                 {/* Content */}
                 <div className="flex-1 space-y-4">
                   {/* Publication Info */}
-                  <div className="flex items-center space-x-2 text-sm text-white/60">
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                     <div className="w-5 h-5 bg-primary/30 rounded-full flex items-center justify-center">
                       <User className="w-3 h-3 text-primary" />
                     </div>
-                    <span className="font-medium text-white/80">{post.author}</span>
+                    <span className="font-medium text-foreground">{post.author}</span>
                     <span>in</span>
-                    <span className="font-medium text-white/80">{post.publication}</span>
+                    <span className="font-medium text-foreground">{post.publication}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                     {post.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-white/70 text-lg leading-relaxed">
+                  <p className="text-muted-foreground text-lg leading-relaxed">
                     {post.description}
                   </p>
 
                   {/* Meta Info */}
                   <div className="flex items-center justify-between pt-4">
-                    <div className="flex items-center space-x-4 text-sm text-white/60">
+                    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                       <span>{post.date}</span>
                       <span>•</span>
                       <span>{post.readTime}</span>
@@ -89,15 +89,15 @@ const BlogSection = () => {
 
                     {/* Engagement */}
                     <div className="flex items-center space-x-4">
-                      <button className="flex items-center space-x-1 text-white/60 hover:text-primary transition-colors">
+                      <button className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors">
                         <Heart className="w-4 h-4" />
                         <span className="text-sm">{post.likes}</span>
                       </button>
-                      <button className="flex items-center space-x-1 text-white/60 hover:text-primary transition-colors">
+                      <button className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors">
                         <MessageCircle className="w-4 h-4" />
                         <span className="text-sm">{post.comments}</span>
                       </button>
-                      <button className="text-white/60 hover:text-primary transition-colors">
+                      <button className="text-muted-foreground hover:text-primary transition-colors">
                         <Bookmark className="w-4 h-4" />
                       </button>
                     </div>
@@ -107,7 +107,7 @@ const BlogSection = () => {
                 {/* Image */}
                 <div className="w-full lg:w-80 h-48 lg:h-32 bg-gradient-to-br from-primary/30 to-accent/20 rounded-lg overflow-hidden flex-shrink-0">
                   <div className="w-full h-full flex items-center justify-center backdrop-blur-sm">
-                    <span className="text-white/60 text-sm">Article Image</span>
+                    <span className="text-muted-foreground text-sm">Article Image</span>
                   </div>
                 </div>
               </div>

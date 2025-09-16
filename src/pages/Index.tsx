@@ -8,7 +8,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const Index = () => {
   return (
-    <div className="min-h-screen dark">
+    <div className="min-h-screen">
       <AuroraBackground className="min-h-screen">
         <div className="w-full relative z-10">
           <Header />
@@ -16,7 +16,7 @@ const Index = () => {
         </div>
       </AuroraBackground>
       
-      <div className="w-full bg-zinc-900 dark:bg-zinc-900">
+      <div className="w-full bg-background">
         <AboutSection />
         <ProjectsSection />
         <BlogSection />
