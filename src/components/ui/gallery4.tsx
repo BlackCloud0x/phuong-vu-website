@@ -134,11 +134,11 @@ const Gallery4 = ({
                   
                   {/* Content positioned at bottom */}
                   <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-6 text-white">
-                    <div className="mb-8">
+                    <div className="mb-16">
                       <h3 className="text-xl font-semibold mb-2 leading-tight">
                         {item.title}
                       </h3>
-                      <p className="text-white/90 text-sm line-clamp-2 leading-relaxed">
+                      <p className="text-white/90 text-sm line-clamp-4 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
