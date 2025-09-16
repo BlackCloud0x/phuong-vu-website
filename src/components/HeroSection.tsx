@@ -7,9 +7,7 @@ const HeroSection = () => {
       
       {/* Hero Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold text-hero-text mb-6 animate-fade-in md:text-4xl text-center">
-          Software Engineer
-        </h1>
+        <h1 className="text-5xl font-bold text-hero-text mb-6 animate-fade-in md:text-4xl text-center">Product Manager</h1>
         
         <p className="text-xl md:text-2xl text-hero-text-muted mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s]">
           Building digital experiences with pixel-perfect precision
