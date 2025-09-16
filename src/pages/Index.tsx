@@ -4,7 +4,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import pixelLandscape from "@/assets/pixel-landscape-bg.png";
+import pixelLandscape from "@/assets/pixel-landscape-bg-new.png";
 
 const Index = () => {
   return (
