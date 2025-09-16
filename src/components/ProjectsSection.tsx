@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 import aiCodeImage from "@/assets/project-ai-code.jpg";
 import ecommerceImage from "@/assets/project-ecommerce.jpg";
 import smartHomeImage from "@/assets/project-smart-home.jpg";
@@ -10,7 +11,8 @@ const projects = [{
   image: aiCodeImage,
   technologies: ["Python", "TensorFlow", "React"],
   demoUrl: "#",
-  githubUrl: "#"
+  githubUrl: "#",
+  detailUrl: "/projects/ai-code-assistant"
 }, {
   id: 2,
   title: "E-Commerce Platform",
@@ -18,7 +20,8 @@ const projects = [{
   image: ecommerceImage,
   technologies: ["Next.js", "Node.js", "MongoDB"],
   demoUrl: "#",
-  githubUrl: "#"
+  githubUrl: "#",
+  detailUrl: "/projects/ecommerce-platform"
 }, {
   id: 3,
   title: "Smart Home Dashboard",
@@ -26,7 +29,8 @@ const projects = [{
   image: smartHomeImage,
   technologies: ["React", "Firebase", "Arduino"],
   demoUrl: "#",
-  githubUrl: "#"
+  githubUrl: "#",
+  detailUrl: "/projects/smart-home-dashboard"
 }];
 const ProjectsSection = () => {
   return <section id="projects" className="py-20 px-6 relative bg-background">
@@ -52,10 +56,16 @@ const ProjectsSection = () => {
                 {/* Overlay Links */}
                 <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-smooth">
                   <Button variant="hero" size="sm" asChild>
-                    
+                    <Link to={project.detailUrl}>
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Details
+                    </Link>
                   </Button>
                   <Button variant="glass" size="sm" asChild>
-                    
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
                   </Button>
                 </div>
               </div>
