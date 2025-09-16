@@ -54,8 +54,19 @@ const BlogSection = () => {
         </div>
 
         <div className="space-y-12">
-          {blogPosts.map((post) => (
-            <article key={post.id} className="group cursor-pointer glass-card p-8 rounded-2xl hover:bg-white/10 transition-smooth">
+          {blogPosts.map((post) => {
+            const getPostSlug = (id: number) => {
+              switch(id) {
+                case 1: return "/blog/building-scalable-web-applications";
+                case 2: return "/blog/future-of-user-experience-design";
+                case 3: return "/blog/effective-project-management-strategies";
+                default: return "#";
+              }
+            };
+
+            return (
+              <article key={post.id} className="group cursor-pointer glass-card p-8 rounded-2xl hover:bg-white/10 transition-smooth">
+                <a href={getPostSlug(post.id)} className="block">
               <div className="flex flex-col lg:flex-row gap-8 items-start">
                 {/* Content */}
                 <div className="flex-1 space-y-4">
@@ -111,8 +122,10 @@ const BlogSection = () => {
                   </div>
                 </div>
               </div>
+                </a>
             </article>
-          ))}
+            );
+          })}
         </div>
 
         {/* View More */}
