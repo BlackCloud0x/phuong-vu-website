@@ -42,7 +42,7 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section id="blog" className="py-20 px-6 relative">
+    <section id="blog" className="py-20 px-6 relative bg-zinc-900 dark:bg-zinc-900">
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

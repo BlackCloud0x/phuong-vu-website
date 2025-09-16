@@ -1,6 +1,6 @@
 import pixelAvatar from "@/assets/pixel-avatar.png";
 const AboutSection = () => {
-  return <section id="about" className="py-20 px-6 relative">
+  return <section id="about" className="py-20 px-6 relative bg-zinc-900 dark:bg-zinc-900">
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row gap-8 items-start justify-center max-w-5xl mx-auto">
           {/* Avatar */}

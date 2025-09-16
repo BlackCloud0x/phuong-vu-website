@@ -2,7 +2,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-12 px-6 border-t border-white/20 glass-card mt-20 mx-4 mb-4 rounded-2xl">
+    <footer className="py-12 px-6 border-t border-white/20 glass-card mt-20 mx-4 mb-4 rounded-2xl bg-zinc-900/50 dark:bg-zinc-900/50">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Logo and Copyright */}
