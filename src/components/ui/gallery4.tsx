@@ -103,13 +103,13 @@ const Gallery4 = ({
             },
           }}
         >
-          <CarouselContent className="ml-0 2xl:ml-[max(4rem,calc(50vw-800px))] 2xl:mr-[max(0rem,calc(50vw-800px))]">
+          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
             {items.map((item) => (
               <CarouselItem
                 key={item.id}
-                className="max-w-[420px] pl-[20px] md:max-w-[480px] lg:max-w-[520px] xl:max-w-[560px]"
+                className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
               >
-                <div className="group relative h-full min-h-[32rem] max-w-full overflow-hidden rounded-xl">
+                <div className="group relative h-full min-h-[24rem] max-w-full overflow-hidden rounded-xl">
                   <img
                     src={item.image}
                     alt={item.title}
