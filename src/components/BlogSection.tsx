@@ -1,30 +1,41 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Heart, MessageCircle, Bookmark, User } from "lucide-react";
 
 const blogPosts = [
   {
     id: 1,
     title: "Building Scalable Web Applications",
-    description: "Learn the key principles for creating web applications that can grow with your business needs.",
-    date: "2024-03-15",
+    description: "Learn the key principles for creating web applications that can grow with your business needs and handle millions of users.",
+    date: "Dec 12, 2023",
     readTime: "5 min read",
+    author: "John Smith",
+    publication: "TechBlog",
+    likes: 234,
+    comments: 12,
     image: "/api/placeholder/400/250"
   },
   {
     id: 2,
     title: "The Future of User Experience Design",
-    description: "Exploring emerging trends and technologies that are shaping the future of digital experiences.",
-    date: "2024-03-10",
-    readTime: "7 min read",
+    description: "Exploring emerging trends and technologies that are shaping the future of digital experiences in 2024 and beyond.",
+    date: "Nov 28, 2023",
+    readTime: "7 min read", 
+    author: "Sarah Johnson",
+    publication: "DesignDaily",
+    likes: 189,
+    comments: 8,
     image: "/api/placeholder/400/250"
   },
   {
     id: 3,
     title: "Effective Project Management Strategies",
-    description: "Best practices for managing complex projects and delivering results on time and within budget.",
-    date: "2024-03-05",
+    description: "Best practices for managing complex projects and delivering results on time and within budget using modern methodologies.",
+    date: "Nov 15, 2023",
     readTime: "6 min read",
+    author: "Mike Chen",
+    publication: "ProductHub",
+    likes: 156,
+    comments: 6,
     image: "/api/placeholder/400/250"
   }
 ];
@@ -34,60 +45,85 @@ const BlogSection = () => {
     <section id="blog" className="py-20 px-6 relative">
       {/* Light overlay for consistency */}
       <div className="absolute inset-0 hero-overlay" />
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Latest Blog Posts
+            Latest Articles
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Insights, tips, and thoughts on product management, technology, and digital innovation.
+            Insights and thoughts on product management, technology, and digital innovation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-12">
           {blogPosts.map((post) => (
-            <Card key={post.id} className="glass-card border-border/50 hover:border-primary/30 transition-all duration-300 group">
-              <div className="aspect-video bg-muted rounded-t-lg overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">Blog Image</span>
+            <article key={post.id} className="group cursor-pointer">
+              <div className="flex flex-col lg:flex-row gap-8 items-start">
+                {/* Content */}
+                <div className="flex-1 space-y-4">
+                  {/* Publication Info */}
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                    <div className="w-5 h-5 bg-muted rounded-full flex items-center justify-center">
+                      <User className="w-3 h-3" />
+                    </div>
+                    <span className="font-medium text-foreground">{post.author}</span>
+                    <span>in</span>
+                    <span className="font-medium text-foreground">{post.publication}</span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                    {post.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {post.description}
+                  </p>
+
+                  {/* Meta Info */}
+                  <div className="flex items-center justify-between pt-4">
+                    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span>{post.readTime}</span>
+                    </div>
+
+                    {/* Engagement */}
+                    <div className="flex items-center space-x-4">
+                      <button className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors">
+                        <Heart className="w-4 h-4" />
+                        <span className="text-sm">{post.likes}</span>
+                      </button>
+                      <button className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors">
+                        <MessageCircle className="w-4 h-4" />
+                        <span className="text-sm">{post.comments}</span>
+                      </button>
+                      <button className="text-muted-foreground hover:text-primary transition-colors">
+                        <Bookmark className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="w-full lg:w-80 h-48 lg:h-32 bg-muted rounded-lg overflow-hidden flex-shrink-0">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                    <span className="text-muted-foreground text-sm">Article Image</span>
+                  </div>
                 </div>
               </div>
-              
-              <CardHeader className="pb-3">
-                <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="w-4 h-4" />
-                    <span>{new Date(post.date).toLocaleDateString()}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                  {post.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {post.description}
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent className="pt-0">
-                <Button 
-                  variant="ghost" 
-                  className="p-0 h-auto font-medium text-primary hover:text-primary/80 group/btn"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover/btn:translate-x-1" />
-                </Button>
-              </CardContent>
-            </Card>
+
+              {/* Divider */}
+              <div className="mt-12 border-b border-border/30" />
+            </article>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="glass-card">
-            View All Posts
+        {/* View More */}
+        <div className="text-center mt-16">
+          <Button variant="ghost" className="text-primary hover:text-primary/80">
+            View all articles
           </Button>
         </div>
       </div>
