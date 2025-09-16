@@ -18,7 +18,7 @@ const AboutSection = () => {
 
           {/* About Content */}
           <div className="glass-card p-8 rounded-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About Me</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-card-foreground mb-6">About Me</h2>
             <div className="space-y-6 text-lg text-card-foreground leading-relaxed">
               <p>
                 I'm a passionate Software Engineer with a love for creating elegant 
