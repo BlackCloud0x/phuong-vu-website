@@ -92,7 +92,7 @@ const BlogSection = () => {
                 </div>
 
                 {/* Image */}
-                <div className="w-full lg:w-80 h-48 lg:h-32 bg-gradient-to-br from-primary/30 to-accent/20 rounded-lg overflow-hidden flex-shrink-0">
+                <div className="w-48 h-48 lg:w-32 lg:h-32 bg-gradient-to-br from-primary/30 to-accent/20 rounded-lg overflow-hidden flex-shrink-0">
                   <div className="w-full h-full flex items-center justify-center backdrop-blur-sm">
                     <span className="text-muted-foreground text-sm">Article Image</span>
                   </div>
