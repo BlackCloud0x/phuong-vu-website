@@ -8,7 +8,7 @@ const HeroSection = () => {
           Product Manager
         </h1>
         
-        <p className="text-xl md:text-2xl text-hero-text-muted mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s]">
+        <p className="text-xl md:text-2xl text-foreground mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s]">
           Building digital experiences with pixel-perfect precision
         </p>
         
