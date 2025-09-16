@@ -109,58 +109,69 @@ const Gallery4 = ({
                 key={item.id}
                 className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
               >
-                <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl md:aspect-[5/4] lg:aspect-[16/9]">
+                <div className="group relative h-full min-h-[24rem] max-w-full overflow-hidden rounded-xl">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 h-full bg-[linear-gradient(hsl(var(--primary)/0),hsl(var(--primary)/0.4),hsl(var(--primary)/0.8)_100%)] mix-blend-multiply" />
-                  <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-primary-foreground md:p-8">
-                    {item.technologies && item.technologies.length > 0 && (
-                      <div className="mb-3 flex flex-wrap gap-2">
-                        {item.technologies.map((tech) => (
-                          <Badge
-                            key={tech}
-                            variant="secondary"
-                            className="bg-white/20 text-white border-white/30 backdrop-blur-sm"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    )}
-                    <div className="mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4">
+                  <div className="absolute inset-0 h-full bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  
+                  {/* Technology tags positioned at top */}
+                  {item.technologies && item.technologies.length > 0 && (
+                    <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-2">
+                      {item.technologies.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="bg-white/20 text-white text-xs border-white/30 backdrop-blur-sm"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
+                  
+                  {/* Content positioned at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-6 text-white">
+                    <h3 className="text-xl font-semibold mb-2 leading-tight">
                       {item.title}
-                    </div>
-                    <div className="mb-8 line-clamp-2 md:mb-12 lg:mb-9">
+                    </h3>
+                    <p className="text-white/90 text-sm line-clamp-2 mb-4 leading-relaxed">
                       {item.description}
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <Link to={item.href} className="flex items-center text-sm hover:text-white/80 transition-colors">
-                        View Details{" "}
-                        <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <Link 
+                        to={item.href} 
+                        className="flex items-center text-sm font-medium hover:text-white/80 transition-colors"
+                      >
+                        View Details
+                        <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                       </Link>
-                      {item.github && (
-                        <a
-                          href={item.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center text-sm hover:text-white/80 transition-colors"
-                        >
-                          <Github className="size-4" />
-                        </a>
-                      )}
-                      {item.demo && (
-                        <a
-                          href={item.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center text-sm hover:text-white/80 transition-colors"
-                        >
-                          <ExternalLink className="size-4" />
-                        </a>
-                      )}
+                      <div className="flex items-center gap-3">
+                        {item.github && (
+                          <a
+                            href={item.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-sm hover:text-white/80 transition-colors"
+                            aria-label="View code"
+                          >
+                            <Github className="size-4" />
+                          </a>
+                        )}
+                        {item.demo && (
+                          <a
+                            href={item.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-sm hover:text-white/80 transition-colors"
+                            aria-label="View demo"
+                          >
+                            <ExternalLink className="size-4" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
