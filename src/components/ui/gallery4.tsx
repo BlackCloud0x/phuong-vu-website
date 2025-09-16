@@ -107,9 +107,9 @@ const Gallery4 = ({
             {items.map((item) => (
               <CarouselItem
                 key={item.id}
-                className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
+                className="max-w-[384px] pl-[20px] lg:max-w-[432px]"
               >
-                <div className="group relative h-full min-h-[24rem] max-w-full overflow-hidden rounded-xl">
+                <div className="group relative h-full min-h-[29rem] max-w-full overflow-hidden rounded-xl">
                   <img
                     src={item.image}
                     alt={item.title}
