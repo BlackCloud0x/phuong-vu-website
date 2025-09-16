@@ -25,17 +25,8 @@ const AboutSection = () => {
                 solutions to complex problems. With a focus on web technologies and 
                 user experience, I transform ideas into pixel-perfect applications.
               </p>
-              <p>
-                My journey in software development spans across multiple domains, 
-                from AI-powered tools to e-commerce platforms and IoT solutions. 
-                I believe in writing clean, maintainable code that not only works 
-                but tells a story.
-              </p>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, 
-                contributing to open-source projects, or sharing knowledge with 
-                the developer community.
-              </p>
+              
+              
             </div>
             
             {/* Skills */}
