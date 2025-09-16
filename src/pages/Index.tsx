@@ -4,10 +4,18 @@ import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import pixelLandscape from "@/assets/pixel-landscape-bg.png";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Global Background */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        style={{ backgroundImage: `url(${pixelLandscape})` }}
+      />
+      <div className="fixed inset-0 bg-black/20 -z-10" />
+      
       <Header />
       <HeroSection />
       <ProjectsSection />
