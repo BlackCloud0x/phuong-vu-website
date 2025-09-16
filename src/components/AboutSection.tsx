@@ -1,8 +1,6 @@
 import pixelAvatar from "@/assets/pixel-avatar.png";
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-20 px-6 relative">
+  return <section id="about" className="py-20 px-6 relative">
       {/* Light overlay for consistency */}
       <div className="absolute inset-0 hero-overlay" />
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -11,11 +9,7 @@ const AboutSection = () => {
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
               <div className="glass-card p-8 rounded-3xl">
-                <img
-                  src={pixelAvatar}
-                  alt="Pixel Art Avatar"
-                  className="w-64 h-64 object-cover rounded-2xl animate-float"
-                />
+                <img src={pixelAvatar} alt="Pixel Art Avatar" className="w-64 h-64 object-cover rounded-2xl animate-float" />
               </div>
               {/* Decorative glow */}
               <div className="absolute inset-0 bg-gradient-primary rounded-3xl opacity-20 blur-xl -z-10 animate-glow" />
@@ -24,9 +18,7 @@ const AboutSection = () => {
 
           {/* About Content */}
           <div className="glass-card p-8 rounded-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              About Me
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">About tMe</h2>
             <div className="space-y-6 text-lg text-card-foreground leading-relaxed">
               <p>
                 I'm a passionate Software Engineer with a love for creating elegant 
@@ -48,29 +40,12 @@ const AboutSection = () => {
             
             {/* Skills */}
             <div className="mt-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                Core Technologies
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "React", "TypeScript", "Node.js", "Python", 
-                  "Next.js", "TailwindCSS", "MongoDB", "PostgreSQL",
-                  "AWS", "Docker", "Git", "GraphQL"
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-primary/10 text-primary rounded-full font-medium hover:bg-primary/20 transition-smooth"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
