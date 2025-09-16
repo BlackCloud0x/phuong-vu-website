@@ -37,15 +37,13 @@ const projects = [
 const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 px-6 relative">
-      {/* Light overlay for consistency */}
-      <div className="absolute inset-0 hero-overlay" />
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Featured Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Explore some of my recent work and creative solutions
           </p>
         </div>
@@ -93,10 +91,10 @@ const ProjectsSection = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-card-foreground mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {project.title}
                 </h3>
-                <p className="text-card-foreground mb-4 leading-relaxed">
+                <p className="text-white/80 mb-4 leading-relaxed">
                   {project.description}
                 </p>
                 
@@ -105,7 +103,7 @@ const ProjectsSection = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full"
+                      className="px-3 py-1 text-sm font-medium bg-primary/20 text-primary border border-primary/30 rounded-full backdrop-blur-sm"
                     >
                       {tech}
                     </span>

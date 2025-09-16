@@ -8,7 +8,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const Index = () => {
   return (
-    <AuroraBackground className="min-h-screen">
+    <AuroraBackground className="min-h-screen dark">
       <div className="w-full">
         <Header />
         <HeroSection />
