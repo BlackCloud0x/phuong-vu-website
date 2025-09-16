@@ -2,8 +2,10 @@ import pixelAvatar from "@/assets/pixel-avatar.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <section id="about" className="py-20 px-6 relative">
+      {/* Light overlay for consistency */}
+      <div className="absolute inset-0 hero-overlay" />
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Avatar */}
           <div className="flex justify-center lg:justify-start">

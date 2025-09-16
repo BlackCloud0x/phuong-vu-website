@@ -36,8 +36,10 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <section id="projects" className="py-20 px-6 relative">
+      {/* Light overlay for consistency */}
+      <div className="absolute inset-0 hero-overlay" />
+      <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
