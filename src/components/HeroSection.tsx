@@ -18,17 +18,7 @@ const HeroSection = () => {
         </div>
         
         {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-12 animate-fade-in [animation-delay:0.6s]">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 glass-card hover:bg-white/20 transition-smooth rounded-full">
-            <Github className="w-6 h-6 text-hero-text" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 glass-card hover:bg-white/20 transition-smooth rounded-full">
-            <Linkedin className="w-6 h-6 text-hero-text" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-3 glass-card hover:bg-white/20 transition-smooth rounded-full">
-            <Twitter className="w-6 h-6 text-hero-text" />
-          </a>
-        </div>
+        
         
         {/* Scroll Indicator */}
         <div className="animate-bounce">
