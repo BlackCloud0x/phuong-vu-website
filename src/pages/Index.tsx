@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
+import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
 import pixelLandscape from "@/assets/pixel-landscape-bg-new.png";
 
@@ -20,7 +20,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
-      <ContactSection />
+      <BlogSection />
       <Footer />
     </div>
   );
