@@ -2,6 +2,7 @@ import { Gallery4, Gallery4Item } from "@/components/ui/gallery4";
 import aiCodeImage from "@/assets/project-ai-code.jpg";
 import ecommerceImage from "@/assets/project-ecommerce.jpg";
 import smartHomeImage from "@/assets/project-smart-home.jpg";
+import mobileAppImage from "@/assets/project-mobile-app.jpg";
 
 const projects: Gallery4Item[] = [
   {
@@ -33,6 +34,16 @@ const projects: Gallery4Item[] = [
     github: "https://github.com",
     demo: "https://demo.example.com",
     href: "/projects/smart-home-dashboard"
+  },
+  {
+    id: "mobile-trading-app",
+    title: "Mobile Trading App",
+    description: "A comprehensive cryptocurrency trading platform with real-time market data and portfolio management.",
+    image: mobileAppImage,
+    technologies: ["React Native", "TypeScript", "GraphQL", "Redux"],
+    github: "https://github.com",
+    demo: "https://demo.example.com",
+    href: "/projects/mobile-trading-app"
   }
 ];
 
