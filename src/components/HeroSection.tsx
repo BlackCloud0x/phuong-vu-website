@@ -4,11 +4,11 @@ const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Hero Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+        <h1 className="text-5xl md:text-7xl font-bold text-hero-text mb-6 animate-fade-in">
           Product Manager
         </h1>
         
-        <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s]">
+        <p className="text-xl md:text-2xl text-hero-text-muted mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s]">
           Building digital experiences with pixel-perfect precision
         </p>
         
@@ -26,21 +26,21 @@ const HeroSection = () => {
         <div className="flex justify-center space-x-6 mb-12 animate-fade-in [animation-delay:0.6s]">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
              className="p-3 glass-card hover:bg-primary/20 transition-smooth">
-            <Github className="w-6 h-6 text-white" />
+            <Github className="w-6 h-6 text-hero-text" />
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
              className="p-3 glass-card hover:bg-primary/20 transition-smooth">
-            <Linkedin className="w-6 h-6 text-white" />
+            <Linkedin className="w-6 h-6 text-hero-text" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" 
              className="p-3 glass-card hover:bg-primary/20 transition-smooth">
-            <Twitter className="w-6 h-6 text-white" />
+            <Twitter className="w-6 h-6 text-hero-text" />
           </a>
         </div>
         
         {/* Scroll Indicator */}
         <div className="animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white/60 mx-auto" />
+          <ChevronDown className="w-8 h-8 text-hero-text-muted mx-auto" />
         </div>
       </div>
     </section>;
