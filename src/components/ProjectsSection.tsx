@@ -93,7 +93,7 @@ const ProjectsSection = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-xl font-bold text-card-foreground mb-3">
                   {project.title}
                 </h3>
                 <p className="text-card-foreground mb-4 leading-relaxed">
