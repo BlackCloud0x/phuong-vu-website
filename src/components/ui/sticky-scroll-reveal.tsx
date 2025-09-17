@@ -15,24 +15,12 @@ export const StickyScroll = ({
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     container: ref,
     offset: ["start start", "end start"],
   });
   const cardLength = content.length;
-
-  // Check for mobile device
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
@@ -69,55 +57,18 @@ export const StickyScroll = ({
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
   }, [activeCard]);
 
-  // Mobile layout - stacked cards
-  if (isMobile) {
-    return (
-      <div className="space-y-8 px-4">
-        {content.map((item, index) => (
-          <motion.div
-            key={item.title + index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 space-y-6"
-          >
-            {/* Content preview for mobile */}
-            <div 
-              style={{ background: linearGradients[index % linearGradients.length] }}
-              className="h-48 w-full rounded-lg overflow-hidden"
-            >
-              {item.content}
-            </div>
-            
-            {/* Text content */}
-            <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-foreground">
-                {item.title}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                {item.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    );
-  }
-
-  // Desktop layout - original sticky scroll
   return (
     <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative lg:space-x-10 rounded-md p-4 lg:p-10"
+      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
       ref={ref}
     >
-      <div className="relative flex items-start px-2 lg:px-4">
+      <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-16 lg:my-20">
+            <div key={item.title + index} className="my-20">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -125,7 +76,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-xl lg:text-2xl font-bold text-slate-100"
+                className="text-2xl font-bold text-slate-100"
               >
                 {item.title}
               </motion.h2>
@@ -136,7 +87,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-sm lg:text-base text-slate-300 max-w-sm mt-6 lg:mt-10 whitespace-pre-line"
+                className="text-kg text-slate-300 max-w-sm mt-10"
               >
                 {item.description}
               </motion.p>
