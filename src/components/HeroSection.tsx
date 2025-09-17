@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Typewriter } from "@/components/ui/typewriter";
 import { Github, Linkedin, Twitter, ChevronDown } from "lucide-react";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20">
@@ -9,7 +10,20 @@ const HeroSection = () => {
         </h1>
         
         <p className="text-lg sm:text-xl md:text-2xl text-foreground mb-6 sm:mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s] leading-relaxed">
-          Building digital experiences with pixel-perfect precision
+          Building digital experiences with{" "}
+          <Typewriter
+            text={[
+              "pixel-perfect precision",
+              "innovative solutions", 
+              "seamless user interfaces",
+              "scalable architectures"
+            ]}
+            speed={70}
+            className="text-primary"
+            waitTime={1500}
+            deleteSpeed={40}
+            cursorChar="_"
+          />
         </p>
         
         <div className="mb-8 sm:mb-12 animate-fade-in [animation-delay:0.4s]">
