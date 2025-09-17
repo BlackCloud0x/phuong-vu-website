@@ -3,45 +3,25 @@ import { ArrowLeft, ExternalLink, Github, Code, Brain, Zap } from "lucide-react"
 import { Link } from "react-router-dom";
 import aiCodeImage from "@/assets/project-ai-code.jpg";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-
-const projectContent = [
-  {
-    title: "Project Overview",
-    description:
-      "A revolutionary machine learning-based code completion tool that transforms the way developers write code. This intelligent assistant analyzes code patterns, understands context, and provides accurate suggestions to help developers write better code faster than ever before. The system uses advanced natural language processing and deep learning models trained on millions of lines of code.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg p-6">
+const projectContent = [{
+  title: "Project Overview",
+  description: "A revolutionary machine learning-based code completion tool that transforms the way developers write code. This intelligent assistant analyzes code patterns, understands context, and provides accurate suggestions to help developers write better code faster than ever before. The system uses advanced natural language processing and deep learning models trained on millions of lines of code.",
+  content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg p-6">
         <div className="text-center">
-          <img
-            src={aiCodeImage}
-            className="w-full h-32 object-cover rounded-lg mb-4"
-            alt="AI Code Assistant"
-          />
-          <h3 className="text-lg font-bold">AI-Powered Intelligence</h3>
+          
+          
         </div>
       </div>
-    ),
-  },
-  {
-    title: "Key Features",
-    description:
-      "• Intelligent code completion with 95% accuracy\n• Real-time syntax error detection and correction\n• Multi-language support (Python, JavaScript, Java, C++)\n• Code quality analysis and best practice suggestions\n• Integration with popular IDEs and editors\n• Context-aware suggestions based on project structure",
-    content: (
-      <div className="h-full w-full flex items-center justify-center text-white">
-        <img
-          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop"
-          className="h-full w-full object-cover rounded-lg"
-          alt="Code features interface"
-        />
+}, {
+  title: "Key Features",
+  description: "• Intelligent code completion with 95% accuracy\n• Real-time syntax error detection and correction\n• Multi-language support (Python, JavaScript, Java, C++)\n• Code quality analysis and best practice suggestions\n• Integration with popular IDEs and editors\n• Context-aware suggestions based on project structure",
+  content: <div className="h-full w-full flex items-center justify-center text-white">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop" className="h-full w-full object-cover rounded-lg" alt="Code features interface" />
       </div>
-    ),
-  },
-  {
-    title: "Technical Stack",
-    description:
-      "Built using cutting-edge technologies including Python for the machine learning backend, TensorFlow for neural network implementation, React with TypeScript for the frontend interface, and Node.js for API services. The system combines transformer-based neural networks with traditional static analysis tools for optimal performance.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
+}, {
+  title: "Technical Stack",
+  description: "Built using cutting-edge technologies including Python for the machine learning backend, TensorFlow for neural network implementation, React with TypeScript for the frontend interface, and Node.js for API services. The system combines transformer-based neural networks with traditional static analysis tools for optimal performance.",
+  content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
         <div className="text-center">
           <div className="grid grid-cols-2 gap-2 mb-4">
             <span className="px-2 py-1 bg-white/20 rounded text-xs">Python</span>
@@ -52,14 +32,10 @@ const projectContent = [
           <Code className="w-12 h-12 mx-auto" />
         </div>
       </div>
-    ),
-  },
-  {
-    title: "Project Information",
-    description:
-      "Duration: 6 months\nTeam Size: 3 developers\nMy Role: Lead Developer & ML Engineer\nStatus: Live & Deployed\n\nThis project represents a significant advancement in developer tooling, combining state-of-the-art machine learning with practical software development needs.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg p-6">
+}, {
+  title: "Project Information",
+  description: "Duration: 6 months\nTeam Size: 3 developers\nMy Role: Lead Developer & ML Engineer\nStatus: Live & Deployed\n\nThis project represents a significant advancement in developer tooling, combining state-of-the-art machine learning with practical software development needs.",
+  content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg p-6">
         <div className="text-center space-y-3">
           <div className="flex items-center justify-center space-x-4 mb-4">
             <Button variant="secondary" size="sm" asChild>
@@ -79,13 +55,9 @@ const projectContent = [
           <p className="text-sm font-medium">Production Ready</p>
         </div>
       </div>
-    ),
-  },
-];
-
+}];
 const AICodeAssistant = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass-card mx-4 mt-4 rounded-2xl">
         <div className="container mx-auto px-6 py-4">
@@ -117,8 +89,6 @@ const AICodeAssistant = () => {
           <StickyScroll content={projectContent} />
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default AICodeAssistant;
