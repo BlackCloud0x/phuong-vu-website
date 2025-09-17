@@ -109,62 +109,65 @@ const Gallery4 = ({
                 key={item.id}
                 className="max-w-[320px] sm:max-w-[384px] pl-[16px] sm:pl-[20px] lg:max-w-[432px]"
               >
-                <div className="group relative h-full min-h-[24rem] sm:min-h-[29rem] max-w-full overflow-hidden rounded-xl">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 h-full bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="group h-full min-h-[24rem] sm:min-h-[29rem] bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/20">
+                  {/* Image Section */}
+                  <div className="relative h-48 sm:h-56 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    {/* Technology tags positioned at top */}
+                    {item.technologies && item.technologies.length > 0 && (
+                      <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-1.5">
+                        {item.technologies.slice(0, 3).map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="secondary"
+                            className="bg-background/90 text-foreground text-xs backdrop-blur-sm"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                        {item.technologies.length > 3 && (
+                          <Badge
+                            variant="secondary"
+                            className="bg-background/90 text-foreground text-xs backdrop-blur-sm"
+                          >
+                            +{item.technologies.length - 3}
+                          </Badge>
+                        )}
+                      </div>
+                    )}
+                  </div>
                   
-                  {/* Technology tags positioned at top */}
-                  {item.technologies && item.technologies.length > 0 && (
-                    <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex flex-wrap gap-1.5 sm:gap-2">
-                      {item.technologies.slice(0, 3).map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="bg-white/20 text-white text-xs border-white/30 backdrop-blur-sm px-2 py-1"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                      {item.technologies.length > 3 && (
-                        <Badge
-                          variant="secondary"
-                          className="bg-white/20 text-white text-xs border-white/30 backdrop-blur-sm px-2 py-1"
-                        >
-                          +{item.technologies.length - 3}
-                        </Badge>
-                      )}
-                    </div>
-                  )}
-                  
-                  {/* Content positioned at bottom */}
-                  <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-4 sm:p-6 text-white">
-                    <div className="mb-12 sm:mb-16">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-2 leading-tight">
+                  {/* Content Section */}
+                  <div className="p-4 sm:p-6 flex flex-col flex-1">
+                    <div className="flex-1">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 text-foreground leading-tight">
                         {item.title}
                       </h3>
-                      <p className="text-white/90 text-sm line-clamp-3 sm:line-clamp-4 leading-relaxed">
+                      <p className="text-muted-foreground text-sm line-clamp-3 sm:line-clamp-4 leading-relaxed mb-4">
                         {item.description}
                       </p>
                     </div>
-                    <div className="flex items-center justify-between">
+                    
+                    {/* Actions */}
+                    <div className="flex items-center justify-between pt-4 border-t border-border">
                       <Link 
                         to={item.href} 
-                        className="flex items-center text-sm font-medium hover:text-white/80 transition-colors min-h-[44px] py-2"
+                        className="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                       >
                         View Details
                         <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                       </Link>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
                         {item.github && (
                           <a
                             href={item.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center text-sm hover:text-white/80 transition-colors min-h-[44px] min-w-[44px]"
+                            className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
                             aria-label="View code"
                           >
                             <Github className="size-4" />
@@ -175,7 +178,7 @@ const Gallery4 = ({
                             href={item.demo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center text-sm hover:text-white/80 transition-colors min-h-[44px] min-w-[44px]"
+                            className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
                             aria-label="View demo"
                           >
                             <ExternalLink className="size-4" />
