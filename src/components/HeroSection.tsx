@@ -13,30 +13,13 @@ const HeroSection = () => {
         </p>
         
         <div className="mb-12 animate-fade-in [animation-delay:0.4s]">
-          <Button 
-            variant="default" 
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25"
-          >
+          <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
             View My Work
           </Button>
         </div>
         
         {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-12 animate-fade-in [animation-delay:0.6s]">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
-             className="p-3 glass-card hover:bg-primary/20 transition-smooth">
-            <Github className="w-6 h-6 text-hero-text" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
-             className="p-3 glass-card hover:bg-primary/20 transition-smooth">
-            <Linkedin className="w-6 h-6 text-hero-text" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" 
-             className="p-3 glass-card hover:bg-primary/20 transition-smooth">
-            <Twitter className="w-6 h-6 text-hero-text" />
-          </a>
-        </div>
+        
         
         {/* Scroll Indicator */}
         <div className="animate-bounce">
