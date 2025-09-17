@@ -12,6 +12,8 @@ const AboutSection = () => {
       backgroundRepeat: 'no-repeat'
     }}
   >
+    {/* Background overlay */}
+    <div className="absolute inset-0 bg-black/30" />
     <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-start justify-center w-full mx-auto">
           {/* Avatar */}
