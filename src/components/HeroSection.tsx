@@ -9,7 +9,7 @@ const HeroSection = () => {
         
         <p className="text-lg sm:text-xl md:text-2xl text-foreground mb-6 sm:mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s] leading-relaxed">
           Please enjoy playing around! I might be{" "}
-          <Typewriter text={["learning", "coding", "gaming", "playing soccer"]} speed={70} className="text-primary" waitTime={1500} deleteSpeed={40} cursorChar="_" />
+          <Typewriter text={["learning", "coding", "gaming", "playing soccer", "making espresso"]} speed={70} className="text-primary" waitTime={1500} deleteSpeed={40} cursorChar="_" />
         </p>
         
         <div className="mb-8 sm:mb-12 animate-fade-in [animation-delay:0.4s]">
