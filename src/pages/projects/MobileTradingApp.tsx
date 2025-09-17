@@ -1,173 +1,103 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Github, ExternalLink, Calendar, Users, User, CheckCircle } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Smartphone, TrendingUp, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import mobileAppImage from "@/assets/project-mobile-app.jpg";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+
+const projectContent = [
+  {
+    title: "Project Overview",
+    description: "A comprehensive cryptocurrency trading platform designed for mobile devices, offering real-time market data, portfolio management, and advanced trading features. The app provides institutional-grade trading tools in an intuitive mobile interface. Built with React Native for cross-platform compatibility and GraphQL for efficient data fetching, this application demonstrates modern mobile development practices and real-time financial data integration.",
+    content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg p-6">
+      <div className="text-center">
+        <Smartphone className="w-16 h-16 mx-auto mb-4" />
+        <h3 className="text-xl font-bold mb-2">Mobile Trading App</h3>
+        <p className="text-sm opacity-90">Cryptocurrency Platform</p>
+      </div>
+    </div>
+  },
+  {
+    title: "Key Features",
+    description: "• Real-time cryptocurrency price tracking and market analysis\n• Advanced charting with technical indicators and drawing tools\n• Portfolio management with profit/loss tracking\n• Secure wallet integration and transaction history\n• Push notifications for price alerts and market updates\n• Biometric authentication and multi-factor security\n• Cross-platform compatibility (iOS & Android)\n• Offline functionality for critical features",
+    content: <div className="h-full w-full flex items-center justify-center text-white">
+      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop" className="h-full w-full object-cover rounded-lg" alt="Mobile trading interface" />
+    </div>
+  },
+  {
+    title: "Technical Implementation",
+    description: "Built with React Native and TypeScript for type-safe cross-platform development. Implemented Redux for state management and React Navigation for seamless screen transitions. Integrated WebSocket connections for live market data streaming and GraphQL subscriptions for real-time portfolio updates. Used Chart.js for interactive financial charts with custom indicators and implemented biometric authentication with secure keychain storage.",
+    content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
+      <div className="text-center">
+        <div className="grid grid-cols-2 gap-2 mb-4">
+          <span className="px-2 py-1 bg-white/20 rounded text-xs">React Native</span>
+          <span className="px-2 py-1 bg-white/20 rounded text-xs">TypeScript</span>
+          <span className="px-2 py-1 bg-white/20 rounded text-xs">GraphQL</span>
+          <span className="px-2 py-1 bg-white/20 rounded text-xs">Redux</span>
+        </div>
+        <TrendingUp className="w-12 h-12 mx-auto" />
+      </div>
+    </div>
+  },
+  {
+    title: "Project Information",
+    description: "Duration: 8 months\nTeam Size: 5 developers\nMy Role: Lead Mobile Developer\nStatus: Live in Production\n\nThis mobile trading app has been successfully deployed to both iOS and Android app stores, serving thousands of active traders with real-time market data and secure trading capabilities.",
+    content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg p-6">
+      <div className="text-center space-y-3">
+        <div className="flex items-center justify-center space-x-4 mb-4">
+          <Button variant="secondary" size="sm" asChild>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="w-3 h-3 mr-1" />
+              Demo
+            </a>
+          </Button>
+          <Button variant="outline" size="sm" asChild>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <Github className="w-3 h-3 mr-1" />
+              Code
+            </a>
+          </Button>
+        </div>
+        <Shield className="w-12 h-12 mx-auto" />
+        <p className="text-sm font-medium">Production Ready</p>
+      </div>
+    </div>
+  }
+];
 
 const MobileTradingApp = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center justify-between">
-          <Link 
-            to="/#projects" 
-            className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Portfolio
-          </Link>
-          <div className="text-sm font-medium">Mobile Trading App</div>
+      <header className="fixed top-0 left-0 right-0 z-50 glass-card mx-4 mt-4 rounded-2xl">
+        <div className="container mx-auto px-6 py-4">
+          <nav className="flex items-center justify-between">
+            <Link to="/" className="flex items-center space-x-2 text-foreground hover:text-primary transition-smooth">
+              <ArrowLeft className="w-5 h-5" />
+              <span className="font-medium">Back to Portfolio</span>
+            </Link>
+            <div className="px-4 py-2 border-2 border-primary/50 rounded-lg font-bold text-lg tracking-wider text-foreground bg-primary/10 backdrop-blur-sm">
+              PHUONG VU
+            </div>
+          </nav>
         </div>
       </header>
 
-      <div className="container mx-auto py-8 px-6">
-        <div className="grid lg:grid-cols-4 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-3">
-            {/* Hero Section */}
-            <div className="mb-8">
-              <img
-                src={mobileAppImage}
-                alt="Mobile Trading App"
-                className="w-full h-64 md:h-80 object-cover rounded-lg mb-6"
-              />
-              
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                <h1 className="text-3xl md:text-4xl font-bold">Mobile Trading App</h1>
-                <div className="flex gap-3">
-                  <Button variant="default" asChild>
-                    <a href="https://demo.example.com" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      View Code
-                    </a>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {["React Native", "TypeScript", "GraphQL", "Redux", "WebSocket", "Chart.js"].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Overview */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                A comprehensive cryptocurrency trading platform designed for mobile devices, offering real-time market data, 
-                portfolio management, and advanced trading features. The app provides institutional-grade trading tools in 
-                an intuitive mobile interface.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Built with React Native for cross-platform compatibility and GraphQL for efficient data fetching, 
-                this application demonstrates modern mobile development practices and real-time financial data integration.
-              </p>
-            </section>
-
-            {/* Key Features */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Real-time cryptocurrency price tracking and market analysis</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Advanced charting with technical indicators and drawing tools</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Portfolio management with profit/loss tracking</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Secure wallet integration and transaction history</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Push notifications for price alerts and market updates</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Biometric authentication and multi-factor security</span>
-                </li>
-              </ul>
-            </section>
-
-            {/* Technical Implementation */}
-            <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Technical Implementation</h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  <strong className="text-foreground">Frontend Architecture:</strong> Built with React Native and TypeScript 
-                  for type-safe cross-platform development. Implemented Redux for state management and React Navigation 
-                  for seamless screen transitions.
-                </p>
-                <p>
-                  <strong className="text-foreground">Real-time Data:</strong> Integrated WebSocket connections for live 
-                  market data streaming and GraphQL subscriptions for real-time portfolio updates. Used Chart.js for 
-                  interactive financial charts with custom indicators.
-                </p>
-                <p>
-                  <strong className="text-foreground">Security & Performance:</strong> Implemented biometric authentication, 
-                  secure keychain storage, and encrypted data transmission. Optimized for performance with lazy loading 
-                  and efficient data caching strategies.
-                </p>
-                <p>
-                  <strong className="text-foreground">API Integration:</strong> Connected to multiple cryptocurrency 
-                  exchanges via RESTful APIs and WebSocket feeds. Implemented robust error handling and offline 
-                  functionality for critical features.
-                </p>
-              </div>
-            </section>
+      <main className="pt-24">
+        <div className="container mx-auto max-w-6xl px-6">
+          {/* Project Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Mobile Trading App
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              A comprehensive cryptocurrency trading platform with real-time market data and portfolio management
+            </p>
           </div>
 
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <div className="bg-muted/50 rounded-lg p-6">
-                <h3 className="font-semibold mb-4">Project Info</h3>
-                <div className="space-y-4 text-sm">
-                  <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-2 text-muted-foreground" />
-                    <span className="text-muted-foreground mr-2">Duration:</span>
-                    <span>8 months</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Users className="h-4 w-4 mr-2 text-muted-foreground" />
-                    <span className="text-muted-foreground mr-2">Team Size:</span>
-                    <span>5 developers</span>
-                  </div>
-                  <div className="flex items-center">
-                    <User className="h-4 w-4 mr-2 text-muted-foreground" />
-                    <span className="text-muted-foreground mr-2">Role:</span>
-                    <span>Lead Mobile Developer</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
-                    <span className="text-muted-foreground mr-2">Status:</span>
-                    <span>Live in Production</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Sticky Scroll Content */}
+          <StickyScroll content={projectContent} />
         </div>
-      </div>
+      </main>
     </div>
   );
 };
