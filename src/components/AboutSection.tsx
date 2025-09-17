@@ -18,11 +18,7 @@ const AboutSection = () => {
           <div className="glass-card p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl flex-1 min-h-[200px] flex flex-col justify-center w-full">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">About Me</h2>
             <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-none">
-              <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-                I'm a passionate Software Engineer with a love for creating elegant 
-                solutions to complex problems. With a focus on web technologies and 
-                user experience, I transform ideas into pixel-perfect applications.
-              </p>
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed">I am a first-year MBA candidate at the Yale School of Management. My experience spans product management and strategy at technology startups across all stages, from pre-seed ventures to Series D companies. Most recently, I led country expansion for ByteDance's education product in Vietnam and co-founded an AI platform that enables creators to build and monetize virtual influencers</p>
               <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                 My expertise spans modern web frameworks, cloud technologies, and 
                 product strategy. I believe in building software that not only works 
@@ -34,11 +30,9 @@ const AboutSection = () => {
             <div className="mt-6 sm:mt-8">
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Core Skills</h3>
               <div className="flex flex-wrap gap-2 sm:gap-3">
-                {["React", "TypeScript", "Node.js", "Product Strategy", "UI/UX Design"].map((skill) => (
-                  <span key={skill} className="px-3 sm:px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-full text-sm font-medium backdrop-blur-sm whitespace-nowrap">
+                {["React", "TypeScript", "Node.js", "Product Strategy", "UI/UX Design"].map(skill => <span key={skill} className="px-3 sm:px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-full text-sm font-medium backdrop-blur-sm whitespace-nowrap">
                     {skill}
-                  </span>
-                ))}
+                  </span>)}
               </div>
             </div>
           </div>
