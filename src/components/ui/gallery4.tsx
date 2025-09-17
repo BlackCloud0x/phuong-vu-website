@@ -3,6 +3,7 @@
 import { ArrowLeft, ArrowRight, Github, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -29,6 +30,163 @@ export interface Gallery4Props {
   description?: string;
   items: Gallery4Item[];
 }
+
+interface ProjectCardProps {
+  item: Gallery4Item;
+  isActive: boolean;
+  onPrev: () => void;
+  onNext: () => void;
+}
+
+const ProjectCard = ({ item, isActive, onPrev, onNext }: ProjectCardProps) => {
+  const [hoverPrev, setHoverPrev] = useState(false);
+  const [hoverNext, setHoverNext] = useState(false);
+
+  return (
+    <div className="w-full max-w-4xl mx-auto p-8">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        {/* Image Section with 3D Stack Effect */}
+        <div className="relative h-80 md:h-96 perspective-1000">
+          <div className="relative w-full h-full">
+            {/* Background stacked cards for depth */}
+            <div className="absolute inset-0 bg-card rounded-2xl shadow-lg transform rotate-2 scale-95 opacity-60" />
+            <div className="absolute inset-0 bg-card rounded-2xl shadow-lg transform -rotate-1 scale-97 opacity-80" />
+            
+            {/* Main project image */}
+            <motion.div
+              className="relative w-full h-full bg-card rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300"
+              whileHover={{ rotateY: 5, rotateX: 5 }}
+              style={{ transformStyle: "preserve-3d" }}
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Technology badges overlay */}
+              {item.technologies && item.technologies.length > 0 && (
+                <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-2">
+                  {item.technologies.slice(0, 3).map((tech) => (
+                    <Badge
+                      key={tech}
+                      variant="secondary"
+                      className="bg-background/90 text-foreground text-xs backdrop-blur-sm"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                  {item.technologies.length > 3 && (
+                    <Badge
+                      variant="secondary"
+                      className="bg-background/90 text-foreground text-xs backdrop-blur-sm"
+                    >
+                      +{item.technologies.length - 3}
+                    </Badge>
+                  )}
+                </div>
+              )}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="space-y-6">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-4"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                {item.title}
+              </h3>
+              
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                {item.description.split(" ").map((word, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
+                    animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.22,
+                      ease: "easeInOut",
+                      delay: 0.025 * i,
+                    }}
+                    className="inline-block"
+                  >
+                    {word}&nbsp;
+                  </motion.span>
+                ))}
+              </p>
+
+              {/* Action Links */}
+              <div className="flex items-center gap-4 pt-4">
+                <Link 
+                  to={item.href} 
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+                >
+                  View Details
+                  <ArrowRight className="ml-2 size-4" />
+                </Link>
+                
+                <div className="flex items-center gap-2">
+                  {item.github && (
+                    <a
+                      href={item.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+                      aria-label="View code"
+                    >
+                      <Github className="size-5" />
+                    </a>
+                  )}
+                  {item.demo && (
+                    <a
+                      href={item.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+                      aria-label="View demo"
+                    >
+                      <ExternalLink className="size-5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation Buttons */}
+          <div className="flex gap-4 pt-6">
+            <button
+              className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+              onClick={onPrev}
+              onMouseEnter={() => setHoverPrev(true)}
+              onMouseLeave={() => setHoverPrev(false)}
+              aria-label="Previous project"
+            >
+              <ArrowLeft className="size-5" />
+            </button>
+            <button
+              className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+              onClick={onNext}
+              onMouseEnter={() => setHoverNext(true)}
+              onMouseLeave={() => setHoverNext(false)}
+              aria-label="Next project"
+            >
+              <ArrowRight className="size-5" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Gallery4 = ({
   title = "Featured Projects",
@@ -92,122 +250,27 @@ const Gallery4 = ({
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full max-w-6xl mx-auto">
         <Carousel
           setApi={setCarouselApi}
           opts={{
-            breakpoints: {
-              "(max-width: 768px)": {
-                dragFree: true,
-              },
-            },
+            loop: true,
+            align: "center",
           }}
         >
-          <CarouselContent className="ml-0 pl-4 sm:pl-6 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
-            {items.map((item) => (
-              <CarouselItem
-                key={item.id}
-                className="max-w-[320px] sm:max-w-[384px] pl-[16px] sm:pl-[20px] lg:max-w-[432px]"
-              >
-                <div className="group h-full min-h-[24rem] sm:min-h-[29rem] bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/20">
-                  {/* Image Section */}
-                  <div className="relative h-48 sm:h-56 overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    {/* Technology tags positioned at top */}
-                    {item.technologies && item.technologies.length > 0 && (
-                      <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-1.5">
-                        {item.technologies.slice(0, 3).map((tech) => (
-                          <Badge
-                            key={tech}
-                            variant="secondary"
-                            className="bg-background/90 text-foreground text-xs backdrop-blur-sm"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                        {item.technologies.length > 3 && (
-                          <Badge
-                            variant="secondary"
-                            className="bg-background/90 text-foreground text-xs backdrop-blur-sm"
-                          >
-                            +{item.technologies.length - 3}
-                          </Badge>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                  
-                  {/* Content Section */}
-                  <div className="p-4 sm:p-6 flex flex-col flex-1">
-                    <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-2 text-foreground leading-tight">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm line-clamp-3 sm:line-clamp-4 leading-relaxed mb-4">
-                        {item.description}
-                      </p>
-                    </div>
-                    
-                    {/* Actions */}
-                    <div className="flex items-center justify-between pt-4 border-t border-border">
-                      <Link 
-                        to={item.href} 
-                        className="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                      >
-                        View Details
-                        <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                      <div className="flex items-center gap-2">
-                        {item.github && (
-                          <a
-                            href={item.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
-                            aria-label="View code"
-                          >
-                            <Github className="size-4" />
-                          </a>
-                        )}
-                        {item.demo && (
-                          <a
-                            href={item.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
-                            aria-label="View demo"
-                          >
-                            <ExternalLink className="size-4" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <CarouselContent className="-ml-4">
+            {items.map((item, index) => (
+              <CarouselItem key={item.id} className="pl-4 basis-full">
+                <ProjectCard 
+                  item={item} 
+                  isActive={currentSlide === index}
+                  onPrev={() => carouselApi?.scrollPrev()}
+                  onNext={() => carouselApi?.scrollNext()}
+                />
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="mt-6 sm:mt-8 flex justify-center gap-2">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
-                currentSlide === index ? "bg-primary" : "bg-primary/20"
-              }`}
-              onClick={() => carouselApi?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            >
-              <span className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full ${
-                currentSlide === index ? "bg-primary" : "bg-primary/20"
-              }`} />
-            </button>
-          ))}
-        </div>
       </div>
     </section>
   );

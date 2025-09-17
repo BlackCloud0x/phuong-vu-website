@@ -144,6 +144,9 @@ export default {
         'gradient-glass': 'var(--gradient-glass)',
         'gradient-hero': 'var(--gradient-hero)',
       },
+      perspective: {
+        '1000': '1000px',
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],
