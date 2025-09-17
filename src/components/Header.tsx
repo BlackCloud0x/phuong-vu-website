@@ -18,8 +18,8 @@ const Header = () => {
             <a href="#projects" className="text-foreground hover:text-primary transition-smooth font-medium">
               Projects
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-smooth font-medium">
-              Contact
+            <a href="#blog" className="text-foreground hover:text-primary transition-smooth font-medium">
+              Blog
             </a>
           </div>
 
