@@ -1,7 +1,64 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Code, Brain, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import aiCodeImage from "@/assets/project-ai-code.jpg";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+
+const stickyScrollContent = [
+  {
+    title: "Intelligent Code Analysis",
+    description:
+      "Our AI analyzes your code in real-time, understanding context, syntax patterns, and programming conventions to provide the most relevant suggestions. The system learns from millions of code examples to understand best practices.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg">
+        <div className="text-center">
+          <Brain className="w-16 h-16 mx-auto mb-4" />
+          <h3 className="text-xl font-bold">AI Brain Processing</h3>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Smart Completions",
+    description:
+      "Get contextually aware code completions that understand your project structure, imported libraries, and coding style. The AI suggests not just what you might type, but what you should type for optimal code quality.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <img
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop"
+          className="h-full w-full object-cover rounded-lg"
+          alt="Code completion interface"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Error Detection & Fixes",
+    description:
+      "Automatically detect syntax errors, logic issues, and potential bugs before you even run your code. Get instant suggestions for fixes and improvements, making debugging faster and more efficient.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg">
+        <div className="text-center">
+          <Zap className="w-16 h-16 mx-auto mb-4" />
+          <h3 className="text-xl font-bold">Lightning Fast Fixes</h3>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Multi-Language Support",
+    description:
+      "Works seamlessly across Python, JavaScript, Java, C++, and more. The AI understands language-specific patterns and conventions, providing accurate suggestions regardless of your tech stack.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg">
+        <div className="text-center">
+          <Code className="w-16 h-16 mx-auto mb-4" />
+          <h3 className="text-xl font-bold">Universal Language Support</h3>
+        </div>
+      </div>
+    ),
+  },
+];
 
 const AICodeAssistant = () => {
   return (
@@ -101,6 +158,11 @@ const AICodeAssistant = () => {
                     Integration with popular IDEs and editors
                   </li>
                 </ul>
+              </section>
+
+              <section className="mb-12">
+                <h2 className="text-2xl font-bold text-foreground mb-4">How It Works</h2>
+                <StickyScroll content={stickyScrollContent} />
               </section>
 
               <section className="mb-12">
