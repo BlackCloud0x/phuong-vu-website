@@ -8,8 +8,8 @@ const HeroSection = () => {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 animate-fade-in leading-tight">Hi there</h1>
         
         <p className="text-lg sm:text-xl md:text-2xl text-foreground mb-6 sm:mb-8 max-w-2xl mx-auto animate-fade-in [animation-delay:0.2s] leading-relaxed">
-          Building digital experiences with{" "}
-          <Typewriter text={["pixel-perfect precision", "innovative solutions", "seamless user interfaces", "scalable architectures"]} speed={70} className="text-primary" waitTime={1500} deleteSpeed={40} cursorChar="_" />
+          Please enjoy playing around! I might be{" "}
+          <Typewriter text={["learning", "coding", "gaming", "playing soccer"]} speed={70} className="text-primary" waitTime={1500} deleteSpeed={40} cursorChar="_" />
         </p>
         
         <div className="mb-8 sm:mb-12 animate-fade-in [animation-delay:0.4s]">
