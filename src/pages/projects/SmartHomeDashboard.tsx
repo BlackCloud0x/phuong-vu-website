@@ -82,14 +82,14 @@ const SmartHomeDashboard = () => {
         </div>
       </header>
 
-      <main className="pt-24">
-        <div className="container mx-auto max-w-6xl px-6">
+      <main className="pt-20 sm:pt-24">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           {/* Project Title */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
               Smart Home Dashboard
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               IoT dashboard for monitoring and controlling connected home devices in real-time
             </p>
           </div>

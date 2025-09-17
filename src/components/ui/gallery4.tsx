@@ -1,17 +1,12 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, Github, ExternalLink, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 
 export interface Gallery4Item {
   id: string;
@@ -35,162 +30,119 @@ const Gallery4 = ({
   description = "Explore my latest work and discover the technologies and methodologies I use to create innovative solutions.",
   items,
 }: Gallery4Props) => {
-  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    if (!carouselApi) {
-      return;
-    }
-    const updateSelection = () => {
-      setCanScrollPrev(carouselApi.canScrollPrev());
-      setCanScrollNext(carouselApi.canScrollNext());
-      setCurrentSlide(carouselApi.selectedScrollSnap());
-    };
-    updateSelection();
-    carouselApi.on("select", updateSelection);
-    return () => {
-      carouselApi.off("select", updateSelection);
-    };
-  }, [carouselApi]);
 
   return (
-    <section className="py-32">
-      <div className="container mx-auto">
-        <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
-          <div className="flex flex-col gap-4">
-            <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
-              {title}
-            </h2>
-            <p className="max-w-lg text-muted-foreground">{description}</p>
-          </div>
-          <div className="hidden shrink-0 gap-2 md:flex">
-            <Button
-              size="icon"
-              variant="ghost"
-              onClick={() => {
-                carouselApi?.scrollPrev();
-              }}
-              disabled={!canScrollPrev}
-              className="disabled:pointer-events-auto"
-            >
-              <ArrowLeft className="size-5" />
-            </Button>
-            <Button
-              size="icon"
-              variant="ghost"
-              onClick={() => {
-                carouselApi?.scrollNext();
-              }}
-              disabled={!canScrollNext}
-              className="disabled:pointer-events-auto"
-            >
-              <ArrowRight className="size-5" />
-            </Button>
-          </div>
+    <section className="py-16 sm:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
+            {title}
+          </h2>
+          <p className="max-w-2xl mx-auto text-muted-foreground text-sm sm:text-base">
+            {description}
+          </p>
         </div>
-      </div>
-      <div className="w-full">
-        <Carousel
-          setApi={setCarouselApi}
-          opts={{
-            breakpoints: {
-              "(max-width: 768px)": {
-                dragFree: true,
-              },
-            },
-          }}
-        >
-          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
-            {items.map((item) => (
-              <CarouselItem
-                key={item.id}
-                className="max-w-[384px] pl-[20px] lg:max-w-[432px]"
-              >
-                <div className="group relative h-full min-h-[29rem] max-w-full overflow-hidden rounded-xl">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 h-full bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  
-                  {/* Technology tags positioned at top */}
-                  {item.technologies && item.technologies.length > 0 && (
-                    <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-2">
-                      {item.technologies.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="bg-white/20 text-white text-xs border-white/30 backdrop-blur-sm"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          {items.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative bg-card/50 backdrop-blur-sm border border-border rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+            >
+              {/* Image Container */}
+              <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Overlay Buttons */}
+                <div className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <Button variant="secondary" size="sm" asChild className="backdrop-blur-sm text-xs sm:text-sm">
+                    <Link to={item.href || "#"}>
+                      <Eye className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                      <span className="hidden sm:inline">View Details</span>
+                      <span className="sm:hidden">View</span>
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="backdrop-blur-sm text-xs sm:text-sm">
+                    <a href={item.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                      <span className="hidden sm:inline">Code</span>
+                      <span className="sm:hidden">Git</span>
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="backdrop-blur-sm text-xs sm:text-sm">
+                    <a href={item.demo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                      <span className="hidden sm:inline">Demo</span>
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-4 sm:p-6">
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {item.technologies?.slice(0, 3).map((tech) => (
+                    <Badge 
+                      key={tech} 
+                      variant="secondary" 
+                      className="text-xs px-2 py-1 bg-primary/10 text-primary border-primary/20"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                  {item.technologies && item.technologies.length > 3 && (
+                    <Badge variant="outline" className="text-xs px-2 py-1">
+                      +{item.technologies.length - 3}
+                    </Badge>
                   )}
-                  
-                  {/* Content positioned at bottom */}
-                  <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-6 text-white">
-                    <div className="mb-16">
-                      <h3 className="text-xl font-semibold mb-2 leading-tight">
-                        {item.title}
-                      </h3>
-                      <p className="text-white/90 text-sm line-clamp-4 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <Link 
-                        to={item.href} 
-                        className="flex items-center text-sm font-medium hover:text-white/80 transition-colors"
-                      >
-                        View Details
-                        <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                      <div className="flex items-center gap-3">
-                        {item.github && (
-                          <a
-                            href={item.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center text-sm hover:text-white/80 transition-colors"
-                            aria-label="View code"
-                          >
-                            <Github className="size-4" />
-                          </a>
-                        )}
-                        {item.demo && (
-                          <a
-                            href={item.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center text-sm hover:text-white/80 transition-colors"
-                            aria-label="View demo"
-                          >
-                            <ExternalLink className="size-4" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
+                </div>
+
+                {/* Title and Description */}
+                <div className="space-y-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground line-clamp-3 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* Action Buttons - Mobile Friendly */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-6 sm:mt-8">
+                  <Button variant="default" size="sm" asChild className="flex-1 min-h-[44px] text-sm">
+                    <Link to={item.href || "#"} className="w-full">
+                      <Eye className="w-4 h-4 mr-2" />
+                      View Details
+                    </Link>
+                  </Button>
+                  <div className="flex gap-2 sm:gap-3">
+                    <Button variant="outline" size="sm" asChild className="flex-1 sm:flex-none min-h-[44px] text-sm">
+                      <a href={item.github} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                        <Github className="w-4 h-4 mr-2" />
+                        <span className="sm:hidden">GitHub</span>
+                        <span className="hidden sm:inline">Code</span>
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild className="flex-1 sm:flex-none min-h-[44px] text-sm">
+                      <a href={item.demo} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </a>
+                    </Button>
                   </div>
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        <div className="mt-8 flex justify-center gap-2">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                currentSlide === index ? "bg-primary" : "bg-primary/20"
-              }`}
-              onClick={() => carouselApi?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
