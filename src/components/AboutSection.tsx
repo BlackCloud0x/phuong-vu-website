@@ -4,7 +4,7 @@ const AboutSection = () => {
       <div className="container mx-auto max-w-7xl relative z-10 w-full">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16 items-stretch justify-center w-full">
           {/* Avatar */}
-          <div className="lg:w-2/5 w-full">
+          <div className="lg:w-1/4 w-full">
             <div className="relative h-full">
               <div className="glass-card p-8 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl h-full flex items-center justify-center min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]">
                 <img src={pixelAvatar} alt="Pixel Art Avatar" className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 object-cover rounded-xl sm:rounded-2xl animate-float shadow-2xl" />
@@ -15,7 +15,7 @@ const AboutSection = () => {
           </div>
 
           {/* About Content */}
-          <div className="lg:w-3/5 w-full">
+          <div className="lg:w-3/4 w-full">
             <div className="glass-card p-8 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl h-full min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] flex flex-col justify-center">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 sm:mb-8 leading-tight">About Me</h2>
               <div className="space-y-6 sm:space-y-8 text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed flex-1">
