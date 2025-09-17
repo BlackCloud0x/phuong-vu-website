@@ -43,7 +43,7 @@ const AboutSection = () => {
             <div className="mt-6 sm:mt-8">
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Core Skills</h3>
               <div className="flex flex-wrap gap-2 sm:gap-3">
-                {["React", "TypeScript", "Node.js", "Product Strategy", "UI/UX Design"].map(skill => <span key={skill} className="px-3 sm:px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-full text-sm font-medium backdrop-blur-sm whitespace-nowrap">
+                {["Product", "Growth", "Strategy", "AI Native", "Entrepreneurial"].map(skill => <span key={skill} className="px-3 sm:px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-full text-sm font-medium backdrop-blur-sm whitespace-nowrap">
                     {skill}
                   </span>)}
               </div>
