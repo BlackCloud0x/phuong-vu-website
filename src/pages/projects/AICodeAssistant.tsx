@@ -4,56 +4,79 @@ import { Link } from "react-router-dom";
 import aiCodeImage from "@/assets/project-ai-code.jpg";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
-const stickyScrollContent = [
+const projectContent = [
   {
-    title: "Intelligent Code Analysis",
+    title: "Project Overview",
     description:
-      "Our AI analyzes your code in real-time, understanding context, syntax patterns, and programming conventions to provide the most relevant suggestions. The system learns from millions of code examples to understand best practices.",
+      "A revolutionary machine learning-based code completion tool that transforms the way developers write code. This intelligent assistant analyzes code patterns, understands context, and provides accurate suggestions to help developers write better code faster than ever before. The system uses advanced natural language processing and deep learning models trained on millions of lines of code.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg">
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg p-6">
         <div className="text-center">
-          <Brain className="w-16 h-16 mx-auto mb-4" />
-          <h3 className="text-xl font-bold">AI Brain Processing</h3>
+          <img
+            src={aiCodeImage}
+            className="w-full h-32 object-cover rounded-lg mb-4"
+            alt="AI Code Assistant"
+          />
+          <h3 className="text-lg font-bold">AI-Powered Intelligence</h3>
         </div>
       </div>
     ),
   },
   {
-    title: "Smart Completions",
+    title: "Key Features",
     description:
-      "Get contextually aware code completions that understand your project structure, imported libraries, and coding style. The AI suggests not just what you might type, but what you should type for optimal code quality.",
+      "• Intelligent code completion with 95% accuracy\n• Real-time syntax error detection and correction\n• Multi-language support (Python, JavaScript, Java, C++)\n• Code quality analysis and best practice suggestions\n• Integration with popular IDEs and editors\n• Context-aware suggestions based on project structure",
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
         <img
           src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop"
           className="h-full w-full object-cover rounded-lg"
-          alt="Code completion interface"
+          alt="Code features interface"
         />
       </div>
     ),
   },
   {
-    title: "Error Detection & Fixes",
+    title: "Technical Stack",
     description:
-      "Automatically detect syntax errors, logic issues, and potential bugs before you even run your code. Get instant suggestions for fixes and improvements, making debugging faster and more efficient.",
+      "Built using cutting-edge technologies including Python for the machine learning backend, TensorFlow for neural network implementation, React with TypeScript for the frontend interface, and Node.js for API services. The system combines transformer-based neural networks with traditional static analysis tools for optimal performance.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg">
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
         <div className="text-center">
-          <Zap className="w-16 h-16 mx-auto mb-4" />
-          <h3 className="text-xl font-bold">Lightning Fast Fixes</h3>
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">Python</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">TensorFlow</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">React</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">TypeScript</span>
+          </div>
+          <Code className="w-12 h-12 mx-auto" />
         </div>
       </div>
     ),
   },
   {
-    title: "Multi-Language Support",
+    title: "Project Information",
     description:
-      "Works seamlessly across Python, JavaScript, Java, C++, and more. The AI understands language-specific patterns and conventions, providing accurate suggestions regardless of your tech stack.",
+      "Duration: 6 months\nTeam Size: 3 developers\nMy Role: Lead Developer & ML Engineer\nStatus: Live & Deployed\n\nThis project represents a significant advancement in developer tooling, combining state-of-the-art machine learning with practical software development needs.",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg">
-        <div className="text-center">
-          <Code className="w-16 h-16 mx-auto mb-4" />
-          <h3 className="text-xl font-bold">Universal Language Support</h3>
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg p-6">
+        <div className="text-center space-y-3">
+          <div className="flex items-center justify-center space-x-4 mb-4">
+            <Button variant="secondary" size="sm" asChild>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-3 h-3 mr-1" />
+                Demo
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Github className="w-3 h-3 mr-1" />
+                Code
+              </a>
+            </Button>
+          </div>
+          <Brain className="w-12 h-12 mx-auto" />
+          <p className="text-sm font-medium">Production Ready</p>
         </div>
       </div>
     ),
@@ -78,135 +101,20 @@ const AICodeAssistant = () => {
         </div>
       </header>
 
-      <main className="pt-24 px-6">
-        <div className="container mx-auto max-w-4xl">
-          {/* Project Hero */}
-          <div className="mb-12">
-            <img 
-              src={aiCodeImage} 
-              alt="AI-Powered Code Assistant" 
-              className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-2xl mb-8"
-            />
-            
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 md:mb-0">
-                AI-Powered Code Assistant
-              </h1>
-              
-              <div className="flex space-x-4">
-                <Button variant="default" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Code
-                  </a>
-                </Button>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mb-8">
-              {["Python", "TensorFlow", "React"].map(tech => (
-                <span key={tech} className="px-3 py-1 text-sm font-medium bg-primary/20 text-primary border border-primary/30 rounded-full backdrop-blur-sm">
-                  {tech}
-                </span>
-              ))}
-            </div>
+      <main className="pt-24">
+        <div className="container mx-auto max-w-6xl px-6">
+          {/* Project Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              AI-Powered Code Assistant
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Revolutionizing developer productivity with intelligent code completion and analysis
+            </p>
           </div>
 
-          {/* Project Details */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  A revolutionary machine learning-based code completion tool that transforms the way developers write code. 
-                  This intelligent assistant analyzes code patterns, understands context, and provides accurate suggestions 
-                  to help developers write better code faster than ever before.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  The system uses advanced natural language processing and deep learning models trained on millions of 
-                  lines of code to understand programming patterns and provide contextually relevant suggestions.
-                </p>
-              </section>
-
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-foreground mb-4">Key Features</h2>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Intelligent code completion with 95% accuracy
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Real-time syntax error detection and correction
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Multi-language support (Python, JavaScript, Java, C++)
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Code quality analysis and best practice suggestions
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    Integration with popular IDEs and editors
-                  </li>
-                </ul>
-              </section>
-
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-foreground mb-4">How It Works</h2>
-                <StickyScroll content={stickyScrollContent} />
-              </section>
-
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-foreground mb-4">Technical Implementation</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Built using a combination of transformer-based neural networks and traditional static analysis tools. 
-                  The model was trained on a curated dataset of high-quality code repositories and fine-tuned for 
-                  specific programming languages and frameworks.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  The frontend interface was developed using React with TypeScript, providing a seamless user experience 
-                  with real-time updates and intuitive visualizations of code suggestions and analysis results.
-                </p>
-              </section>
-            </div>
-
-            <div className="lg:col-span-1">
-              <div className="glass-card p-6 sticky top-24">
-                <h3 className="text-xl font-bold text-foreground mb-4">Project Info</h3>
-                
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-medium text-foreground mb-1">Duration</h4>
-                    <p className="text-muted-foreground">6 months</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-medium text-foreground mb-1">Team Size</h4>
-                    <p className="text-muted-foreground">3 developers</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-medium text-foreground mb-1">My Role</h4>
-                    <p className="text-muted-foreground">Lead Developer & ML Engineer</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-medium text-foreground mb-1">Status</h4>
-                    <p className="text-primary font-medium">Live & Deployed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Sticky Scroll Content */}
+          <StickyScroll content={projectContent} />
         </div>
       </main>
     </div>
