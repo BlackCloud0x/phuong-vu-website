@@ -13,7 +13,12 @@ const HeroSection = () => {
         </p>
         
         <div className="mb-12 animate-fade-in [animation-delay:0.4s]">
-          <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
+          <Button 
+            variant="default" 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25"
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             View My Work
           </Button>
         </div>
