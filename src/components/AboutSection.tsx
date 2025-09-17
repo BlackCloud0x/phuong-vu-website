@@ -1,6 +1,19 @@
 import pixelAvatar from "@/assets/pixel-avatar.png";
+import pixelLandscape from "@/assets/pixel-landscape-about.png";
+
 const AboutSection = () => {
-  return <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative bg-background">
+  return <section 
+    id="about" 
+    className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative bg-background"
+    style={{
+      backgroundImage: `url(${pixelLandscape})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}
+  >
+    {/* Background overlay */}
+    <div className="absolute inset-0 bg-background/80 backdrop-blur-[1px]" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-start justify-center w-full mx-auto">
           {/* Avatar */}
