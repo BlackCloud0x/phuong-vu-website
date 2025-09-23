@@ -77,12 +77,8 @@ const AICodeAssistant = () => {
         <div className="container mx-auto max-w-6xl px-6">
           {/* Project Title */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              AI-Powered Code Assistant
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Revolutionizing developer productivity with intelligent code completion and analysis
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">AI Companion for Astrology</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">A compassionate companion for everyday decisions, guided by astrology</p>
           </div>
 
           {/* Sticky Scroll Content */}
