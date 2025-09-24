@@ -90,8 +90,10 @@ export const StickyScroll = ({
                 className="text-kg text-slate-300 max-w-sm mt-10"
               >
                 Last summer, I kept hearing the same thing from people I care about: they love astrology, but the apps are in English, and there's no Vietnamese-first experience that feels natural. There wasn't a Vietnamese astrology API either, and realistically, the market might be too small for someone to build one soon. I decided it was the perfect opportunity to build with Cursor my first project that my friends and family could actually use.
-
-I also notice that most astrology apps are pretty passive: open, read, close. That's not how a real reading feels. Real readings are conversations—follow-ups, context, what-if questions. With modern LLMs, I saw an opportunity to utilize AI to replicate the experience of talking with an actual "astrologer" any time without awkward scheduling or high session fees.
+                
+                <br /><br />
+                
+                I also notice that most astrology apps are pretty passive: open, read, close. That's not how a real reading feels. Real readings are conversations—follow-ups, context, what-if questions. With modern LLMs, I saw an opportunity to utilize AI to replicate the experience of talking with an actual "astrologer" any time without awkward scheduling or high session fees.
               </motion.p>
             </div>
           ))}
