@@ -20,7 +20,7 @@ const projectContent = [{
       </div>
 }, {
   title: "Technical Stack",
-  description: "Built using cutting-edge technologies including Python for the machine learning backend, TensorFlow for neural network implementation, React with TypeScript for the frontend interface, and Node.js for API services. The system combines transformer-based neural networks with traditional static analysis tools for optimal performance.",
+  description: "Mobile Development Framework: React Native, Expo, Typescript\nUI & Styling: React Native Paper, React Native Reanimated\nBackend & Database: Supabase for PostgreSQL database, Authentication, Edge functions\nExternal Integrations: Astrology API, Openrouter API, Deepseek & Gemini API, Revenue Cat",
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
         <div className="text-center">
           <div className="grid grid-cols-2 gap-2 mb-4">
