@@ -89,11 +89,11 @@ export const StickyScroll = ({
                 }}
                 className="text-kg text-slate-300 max-w-sm mt-10"
               >
-                Last summer, I kept hearing the same thing from people I care about: they love astrology, but the apps are in English, and there's no Vietnamese-first experience that feels natural. There wasn't a Vietnamese astrology API either, and realistically, the market might be too small for someone to build one soon. I decided it was the perfect opportunity to build with Cursor my first project that my friends and family could actually use.
+                I solved the lack of a Vietnamese astrology API by piping data from a reliable English provider and translating it with an LLM. I tested multiple models via OpenRouter and chose DeepSeek for its balance of accuracy and cost, which also let me offer instant switching between Vietnamese and English in the app. This setup fits a personal project, but it may not scale commercially because it pays twice—once for the astrology API and once for the LLM—to deliver a single feature.
                 
                 <br /><br />
                 
-                I also notice that most astrology apps are pretty passive: open, read, close. That's not how a real reading feels. Real readings are conversations—follow-ups, context, what-if questions. With modern LLMs, I saw an opportunity to utilize AI to replicate the experience of talking with an actual "astrologer" any time without awkward scheduling or high session fees.
+                For the Astrology Companion, I prompt‑engineered it to ground every answer in the natal chart, layer in current transits so guidance evolves over time, and speak like a warm, friendly friend. With transits and timing in context, answers change day to day, giving people a reason to come back for something genuinely new and personal. I also added light meditation‑style music to help users slow down, think, and reflect on their questions.
               </motion.p>
             </div>
           ))}
