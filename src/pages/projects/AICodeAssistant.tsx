@@ -5,7 +5,7 @@ import aiCodeImage from "@/assets/project-ai-code.jpg";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 const projectContent = [{
   title: "Project Overview",
-  description: "A revolutionary machine learning-based code completion tool that transforms the way developers write code. This intelligent assistant analyzes code patterns, understands context, and provides accurate suggestions to help developers write better code faster than ever before. The system uses advanced natural language processing and deep learning models trained on millions of lines of code.",
+  description: "Last summer, I kept hearing the same thing from people I care about: they love astrology, but the apps are in English, and there's no Vietnamese-first experience that feels natural. There wasn't a Vietnamese astrology API either, and realistically, the market might be too small for someone to build one soon. I decided it was the perfect opportunity to build with Cursor my first project that my friends and family could actually use.\n\nI also notice that most astrology apps are pretty passive: open, read, close. That's not how a real reading feels. Real readings are conversations—follow-ups, context, what-if questions. With modern LLMs, I saw an opportunity to utilize AI to replicate the experience of talking with an actual \"astrologer\" any time without awkward scheduling or high session fees.",
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg p-6">
         <div className="text-center">
           
