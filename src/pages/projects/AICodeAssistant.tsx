@@ -20,7 +20,7 @@ const projectContent = [{
       </div>
 }, {
   title: "Technical Stack",
-  description: "Mobile Development Framework: React Native, Expo, Typescript\n\nUI & Styling: React Native Paper, React Native Reanimated\n\nBackend & Database: Supabase for PostgreSQL database, Authentication, Edge functions\n\nExternal Integrations: Astrology API, Openrouter API, Deepseek & Gemini API, Revenue Cat",
+  description: "**Mobile Development Framework:** React Native, Expo, Typescript\n\n**UI & Styling:** React Native Paper, React Native Reanimated\n\n**Backend & Database:** Supabase for PostgreSQL database, Authentication, Edge functions\n\n**External Integrations:** Astrology API, Openrouter API, Deepseek & Gemini API, Revenue Cat",
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
         <div className="text-center">
           <div className="grid grid-cols-2 gap-2 mb-4">
