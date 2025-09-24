@@ -33,7 +33,7 @@ const projectContent = [{
         </div>
       </div>
 }, {
-  title: "Project Information",
+  title: "On Reflection",
   description: "This app won't change the world, but it changed my world a little. It taught me to build for the people I love, in the language they actually live in, and to let software listen more than it speaks.\n\nI've spent my whole career in tech, but not as a coder. Maybe that's why this moment feels so bright: AI turned \"someday\" into \"ship it\" . That's far from the end of coding though—it's the start of more voices building what they wish existed",
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg p-6">
         <div className="text-center space-y-3">
