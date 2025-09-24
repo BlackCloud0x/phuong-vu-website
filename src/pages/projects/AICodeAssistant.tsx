@@ -24,10 +24,10 @@ const projectContent = [{
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
         <div className="text-center">
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <span className="px-2 py-1 bg-white/20 rounded text-xs">Python</span>
-            <span className="px-2 py-1 bg-white/20 rounded text-xs">TensorFlow</span>
-            <span className="px-2 py-1 bg-white/20 rounded text-xs">React</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">Cursor</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">React Native</span>
             <span className="px-2 py-1 bg-white/20 rounded text-xs">TypeScript</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">Supabase</span>
           </div>
           <Code className="w-12 h-12 mx-auto" />
         </div>
