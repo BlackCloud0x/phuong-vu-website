@@ -89,11 +89,7 @@ export const StickyScroll = ({
                 }}
                 className="text-kg text-slate-300 max-w-sm mt-10"
               >
-                I solved the lack of a Vietnamese astrology API by piping data from a reliable English provider and translating it with an LLM. I tested multiple models via OpenRouter and chose DeepSeek for its balance of accuracy and cost, which also let me offer instant switching between Vietnamese and English in the app. This setup fits a personal project, but it may not scale commercially because it pays twice—once for the astrology API and once for the LLM—to deliver a single feature.
-                
-                <br /><br />
-                
-                For the Astrology Companion, I prompt‑engineered it to ground every answer in the natal chart, layer in current transits so guidance evolves over time, and speak like a warm, friendly friend. With transits and timing in context, answers change day to day, giving people a reason to come back for something genuinely new and personal. I also added light meditation‑style music to help users slow down, think, and reflect on their questions.
+                {item.description}
               </motion.p>
             </div>
           ))}

@@ -14,7 +14,7 @@ const projectContent = [{
       </div>
 }, {
   title: "Key Features",
-  description: "• Intelligent code completion with 95% accuracy\n• Real-time syntax error detection and correction\n• Multi-language support (Python, JavaScript, Java, C++)\n• Code quality analysis and best practice suggestions\n• Integration with popular IDEs and editors\n• Context-aware suggestions based on project structure",
+  description: "I solved the lack of a Vietnamese astrology API by piping data from a reliable English provider and translating it with an LLM. I tested multiple models via OpenRouter and chose DeepSeek for its balance of accuracy and cost, which also let me offer instant switching between Vietnamese and English in the app. This setup fits a personal project, but it may not scale commercially because it pays twice—once for the astrology API and once for the LLM—to deliver a single feature.\n\nFor the Astrology Companion, I prompt‑engineered it to ground every answer in the natal chart, layer in current transits so guidance evolves over time, and speak like a warm, friendly friend. With transits and timing in context, answers change day to day, giving people a reason to come back for something genuinely new and personal. I also added light meditation‑style music to help users slow down, think, and reflect on their questions.",
   content: <div className="h-full w-full flex items-center justify-center text-white">
         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop" className="h-full w-full object-cover rounded-lg" alt="Code features interface" />
       </div>
