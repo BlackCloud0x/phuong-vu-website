@@ -7,7 +7,7 @@ import mobileAppImage from "@/assets/project-mobile-app.jpg";
 const projects: Gallery4Item[] = [
   {
     id: "ai-code-assistant",
-    title: "AI-Powered Code Assistant",
+    title: "AI Companion for Astrology",
     description: "A machine learning-based code completion tool that helps developers write better code faster.",
     image: aiCodeImage,
     technologies: ["Python", "TensorFlow", "React", "Node.js"],
