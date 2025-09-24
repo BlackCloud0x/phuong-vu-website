@@ -8,7 +8,7 @@ const projects: Gallery4Item[] = [
   {
     id: "ai-code-assistant",
     title: "AI Companion for Astrology",
-    description: "A machine learning-based code completion tool that helps developers write better code faster.",
+    description: "A compassionate companion for everyday decisions, guided by astrology",
     image: aiCodeImage,
     technologies: ["Python", "TensorFlow", "React", "Node.js"],
     github: "https://github.com",
