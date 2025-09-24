@@ -91,7 +91,12 @@ export const StickyScroll = ({
               >
                 {item.description.split('\n\n').map((paragraph, pIndex) => (
                   <p key={pIndex} className={pIndex > 0 ? 'mt-4' : ''}>
-                    {paragraph}
+                    {paragraph.split(/(\*\*.*?\*\*)/).map((part, partIndex) => {
+                      if (part.startsWith('**') && part.endsWith('**')) {
+                        return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+                      }
+                      return part;
+                    })}
                   </p>
                 ))}
               </motion.div>
