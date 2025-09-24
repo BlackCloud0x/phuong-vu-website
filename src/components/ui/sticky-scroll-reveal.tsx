@@ -80,7 +80,7 @@ export const StickyScroll = ({
               >
                 {item.title}
               </motion.h2>
-              <motion.p
+              <motion.div
                 initial={{
                   opacity: 0,
                 }}
@@ -89,8 +89,12 @@ export const StickyScroll = ({
                 }}
                 className="text-kg text-slate-300 max-w-sm mt-10"
               >
-                {item.description}
-              </motion.p>
+                {item.description.split('\n\n').map((paragraph, pIndex) => (
+                  <p key={pIndex} className={pIndex > 0 ? 'mt-4' : ''}>
+                    {paragraph}
+                  </p>
+                ))}
+              </motion.div>
             </div>
           ))}
           <div className="h-40" />
