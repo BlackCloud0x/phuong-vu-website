@@ -108,7 +108,10 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-96 w-60 bg-white sticky top-10 overflow-hidden rounded-md",
+          "hidden lg:block bg-white sticky top-10 overflow-hidden rounded-md",
+          content[activeCard].content?.props?.className?.includes('mobile-screenshot') 
+            ? "h-96 w-60" 
+            : "h-60 w-80",
           contentClassName
         )}
       >
