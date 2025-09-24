@@ -5,7 +5,7 @@ import aiCodeImage from "@/assets/project-ai-code.jpg";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 const projectContent = [{
   title: "Project Overview",
-  description: "Last summer, I kept hearing the same thing from people I care about: they love astrology, but the apps are in English, and there's no Vietnamese-first experience that feels natural. There wasn't a Vietnamese astrology API either, and realistically, the market might be too small for someone to build one soon. I decided it was the perfect opportunity to build with Cursor my first project that my friends and family could actually use.\n\nI also notice that most astrology apps are pretty passive: open, read, close. That's not how a real reading feels. Real readings are conversations—follow-ups, context, what-if questions. With modern LLMs, I saw an opportunity to utilize AI to replicate the experience of talking with an actual \"astrologer\" any time without awkward scheduling or high session fees.",
+  description: "A revolutionary machine learning-based code completion tool that transforms the way developers write code. This intelligent assistant analyzes code patterns, understands context, and provides accurate suggestions to help developers write better code faster than ever before. The system uses advanced natural language processing and deep learning models trained on millions of lines of code.",
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(6_182_212),rgb(16_185_129))] flex items-center justify-center text-white rounded-lg p-6">
         <div className="text-center">
           
@@ -14,20 +14,20 @@ const projectContent = [{
       </div>
 }, {
   title: "Key Features",
-  description: "I solved the lack of a Vietnamese astrology API by piping data from a reliable English provider and translating it with an LLM. I tested multiple models via OpenRouter and chose DeepSeek for its balance of accuracy and cost, which also let me offer instant switching between Vietnamese and English in the app. This setup fits a personal project, but it may not scale commercially because it pays twice—once for the astrology API and once for the LLM—to deliver a single feature.\n\n\nFor the Astrology Companion, I prompt‑engineered it to ground every answer in the natal chart, layer in current transits so guidance evolves over time, and speak like a warm, friendly friend. With transits and timing in context, answers change day to day, giving people a reason to come back for something genuinely new and personal. I also added light meditation‑style music to help users slow down, think, and reflect on their questions.",
+  description: "• Intelligent code completion with 95% accuracy\n• Real-time syntax error detection and correction\n• Multi-language support (Python, JavaScript, Java, C++)\n• Code quality analysis and best practice suggestions\n• Integration with popular IDEs and editors\n• Context-aware suggestions based on project structure",
   content: <div className="h-full w-full flex items-center justify-center text-white">
         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop" className="h-full w-full object-cover rounded-lg" alt="Code features interface" />
       </div>
 }, {
   title: "Technical Stack",
-  description: "**Mobile Development Framework:** React Native, Expo, Typescript\n\n**UI & Styling:** React Native Paper, React Native Reanimated\n\n**Backend & Database:** Supabase for PostgreSQL database, Authentication, Edge functions\n\n**External Integrations:** Astrology API, Openrouter API, Deepseek & Gemini API, Revenue Cat",
+  description: "Built using cutting-edge technologies including Python for the machine learning backend, TensorFlow for neural network implementation, React with TypeScript for the frontend interface, and Node.js for API services. The system combines transformer-based neural networks with traditional static analysis tools for optimal performance.",
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(249_115_22),rgb(234_179_8))] flex items-center justify-center text-white rounded-lg p-4">
         <div className="text-center">
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <span className="px-2 py-1 bg-white/20 rounded text-xs">Python</span>
-            <span className="px-2 py-1 bg-white/20 rounded text-xs">TensorFlow</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">Cursor</span>
             <span className="px-2 py-1 bg-white/20 rounded text-xs">React</span>
-            <span className="px-2 py-1 bg-white/20 rounded text-xs">TypeScript</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">Typescript</span>
+            <span className="px-2 py-1 bg-white/20 rounded text-xs">Supabase</span>
           </div>
           <Code className="w-12 h-12 mx-auto" />
         </div>
