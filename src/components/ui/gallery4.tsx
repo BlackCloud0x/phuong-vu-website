@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import appIcon from "@/assets/app-icon.png";
 export interface Gallery4Item {
   id: string;
   title: string;
@@ -52,7 +53,7 @@ const ProjectCard = ({
           }} style={{
             transformStyle: "preserve-3d"
           }}>
-              <img src={"/src/assets/app-icon.png"} alt={item.title} className="w-full h-full object-contain" />
+              <img src={appIcon} alt={item.title} className="w-full h-full object-contain" />
               
               {/* Technology badges overlay removed */}
             </motion.div>
