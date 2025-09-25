@@ -19,7 +19,7 @@ const Index = () => {
       <div className="w-full bg-background">
         <AboutSection />
         <ProjectsSection />
-        <BlogSection />
+        {/* <BlogSection /> */}
         <Footer />
       </div>
     </div>
