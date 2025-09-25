@@ -20,7 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/projects/ai-code-assistant" element={<AICodeAssistant />} />
+          <Route path="/projects/ai-companion" element={<AICodeAssistant />} />
           <Route path="/projects/ecommerce-platform" element={<NotFound />} />
           <Route path="/projects/smart-home-dashboard" element={<NotFound />} />
           <Route path="/projects/mobile-trading-app" element={<NotFound />} />
