@@ -103,14 +103,6 @@ const ProjectCard = ({
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
                 
-                <div className="flex items-center gap-2">
-                  {item.github && <a href={item.github} target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted" aria-label="View code">
-                      <Github className="size-5" />
-                    </a>}
-                  {item.demo && <a href={item.demo} target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted" aria-label="View demo">
-                      <ExternalLink className="size-5" />
-                    </a>}
-                </div>
               </div>
             </motion.div>
           </AnimatePresence>
