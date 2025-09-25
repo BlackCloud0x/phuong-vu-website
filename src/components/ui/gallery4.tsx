@@ -52,7 +52,7 @@ const ProjectCard = ({
           }} style={{
             transformStyle: "preserve-3d"
           }}>
-              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+              <img src={"/src/assets/app-icon.png"} alt={item.title} className="w-full h-full object-contain" />
               
               {/* Technology badges overlay removed */}
             </motion.div>
