@@ -54,12 +54,7 @@ export const StickyScroll = ({
   );
 
   useEffect(() => {
-    // Use background color for first two sections (project overview and key features)
-    if (activeCard === 0 || activeCard === 1) {
-      setBackgroundGradient(backgroundColors[activeCard % backgroundColors.length]);
-    } else {
-      setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-    }
+    setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
   }, [activeCard]);
 
   return (
