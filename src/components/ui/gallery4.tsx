@@ -149,7 +149,7 @@ const Gallery4 = ({
         <div className="mb-8 md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-3 sm:gap-4 text-center mx-auto">
             <h2 className="text-2xl sm:text-3xl font-medium md:text-4xl lg:text-5xl">
-              {title}
+              My Latest Project
             </h2>
             <p className="max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground">{description}</p>
           </div>
