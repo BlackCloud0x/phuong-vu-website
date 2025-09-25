@@ -5,7 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import AICodeAssistant from "./pages/projects/AICodeAssistant";
+import AICodeAssistant from "./pages/projects/AICompanion";
+import AICompanionDemo from "./pages/projects/AICompanionDemo";
 import BuildingScalableWebApplications from "./pages/blog/BuildingScalableWebApplications";
 import FutureOfUserExperienceDesign from "./pages/blog/FutureOfUserExperienceDesign";
 import EffectiveProjectManagementStrategies from "./pages/blog/EffectiveProjectManagementStrategies";
@@ -21,6 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects/ai-companion" element={<AICodeAssistant />} />
+          <Route path="/projects/ai-companion/demo" element={<AICompanionDemo />} />
           <Route path="/projects/ecommerce-platform" element={<NotFound />} />
           <Route path="/projects/smart-home-dashboard" element={<NotFound />} />
           <Route path="/projects/mobile-trading-app" element={<NotFound />} />
