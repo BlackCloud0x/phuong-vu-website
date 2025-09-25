@@ -2,16 +2,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Play, Pause } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
-// Import your demo video here - place your video file in src/assets/
-// import demoVideo from "@/assets/ai-companion-demo.mp4";
+// Import your demo video as a module for proper bundling
+import demoVideo from "@/assets/video.mp4";
+import posterImage from "@/assets/astrology-app-screenshot.jpeg";
 
 const AICompanionDemo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const navigate = useNavigate();
-
-  // Video file path
-  const demoVideo = "/src/assets/video.mp4";
 
   const togglePlayPause = () => {
     if (videoRef.current) {
@@ -73,7 +71,7 @@ const AICompanionDemo = () => {
                           onPlay={() => setIsPlaying(true)}
                           onPause={() => setIsPlaying(false)}
                           controls={false}
-                          poster="/src/assets/astrology-app-screenshot.jpeg"
+                          poster={posterImage}
                         />
                         
                         {/* Custom Play/Pause Overlay */}
