@@ -54,15 +54,7 @@ const ProjectCard = ({
           }}>
               <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
               
-              {/* Technology badges overlay */}
-              {item.technologies && item.technologies.length > 0 && <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-2">
-                  {item.technologies.slice(0, 3).map(tech => <Badge key={tech} variant="secondary" className="bg-background/90 text-foreground text-xs backdrop-blur-sm">
-                      {tech}
-                    </Badge>)}
-                  {item.technologies.length > 3 && <Badge variant="secondary" className="bg-background/90 text-foreground text-xs backdrop-blur-sm">
-                      +{item.technologies.length - 3}
-                    </Badge>}
-                </div>}
+              {/* Technology badges overlay removed */}
             </motion.div>
           </div>
         </div>
