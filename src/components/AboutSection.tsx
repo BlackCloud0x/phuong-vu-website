@@ -1,4 +1,4 @@
-import profileAvatar from "@/assets/profile-avatar.png";
+import pixelAvatar from "@/assets/pixel-avatar.png";
 import pixelLandscape from "@/assets/pixel-landscape-about.png";
 
 const AboutSection = () => {
@@ -20,7 +20,7 @@ const AboutSection = () => {
           <div className="flex-shrink-0 lg:w-auto w-full flex justify-center">
             <div className="relative">
               <div className="glass-card bg-white/95 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/20">
-                <img src={profileAvatar} alt="Profile Avatar" className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg sm:rounded-xl animate-float" />
+                <img src={pixelAvatar} alt="Pixel Art Avatar" className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg sm:rounded-xl animate-float" />
               </div>
               {/* Decorative glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-xl sm:rounded-2xl opacity-50 blur-xl -z-10 animate-glow" />
