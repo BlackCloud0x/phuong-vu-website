@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Linkedin, Mail } from "lucide-react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,8 +33,13 @@ const Header = () => {
               <a href="#projects" className="text-foreground hover:text-primary transition-smooth font-medium">
                 Projects
               </a>
-              <a href="#blog" className="text-foreground hover:text-primary transition-smooth font-medium">
-                Blog
+              <a href="https://www.linkedin.com/in/phuongvietvu/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-smooth font-medium flex items-center gap-2">
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+              <a href="mailto:phuong.vu@yale.edu" className="text-foreground hover:text-primary transition-smooth font-medium flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                Email
               </a>
             </div>
 
@@ -76,11 +81,22 @@ const Header = () => {
                 Projects
               </a>
               <a 
-                href="#blog" 
-                className="text-foreground hover:text-primary transition-smooth font-medium text-lg py-2"
+                href="https://www.linkedin.com/in/phuongvietvu/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary transition-smooth font-medium text-lg py-2 flex items-center gap-2"
                 onClick={closeMobileMenu}
               >
-                Blog
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+              <a 
+                href="mailto:phuong.vu@yale.edu" 
+                className="text-foreground hover:text-primary transition-smooth font-medium text-lg py-2 flex items-center gap-2"
+                onClick={closeMobileMenu}
+              >
+                <Mail className="w-4 h-4" />
+                Email
               </a>
             </nav>
           </div>
