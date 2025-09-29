@@ -123,7 +123,7 @@ const ProjectCard = ({
 };
 const Gallery4 = ({
   title = "Featured Projects",
-  description = "Explore my latest work and discover the technologies and methodologies I use to create innovative solutions.",
+  description = "My latest projects built with AI",
   items
 }: Gallery4Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
