@@ -50,13 +50,13 @@ const AICompanionDemo = () => {
         </div>
       </header>
 
-      <main className="pt-24 pb-12">
+      <main className="pt-20 pb-6 h-screen flex items-center">
         <div className="container mx-auto max-w-4xl px-6">
           {/* iPhone Mockup with Video */}
-          <div className="flex flex-col items-center justify-center space-y-8">
+          <div className="flex flex-col items-center justify-center space-y-4">
             <div className="relative">
-              <div className="relative bg-black rounded-[3rem] p-2 shadow-2xl">
-                <div className="bg-black rounded-[2.5rem] overflow-hidden" style={{ width: '375px', height: '812px' }}>
+              <div className="relative bg-black rounded-[2rem] p-1.5 shadow-2xl">
+                <div className="bg-black rounded-[1.75rem] overflow-hidden" style={{ width: '280px', height: '600px' }}>
                   {/* iPhone Notch */}
                   <div className="relative h-full bg-gray-900">
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
