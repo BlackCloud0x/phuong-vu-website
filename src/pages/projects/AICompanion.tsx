@@ -32,7 +32,7 @@ const projectContent = [{
       </div>
 }, {
   title: "On Reflection",
-  description: "Even with only a few users, this app changed my world a little. It reminded me that the best products start with a real user problem. Building it taught me to listen closely, design around context, and make the experience feel natural instead of just functional.\n\nI've spent my whole career in tech, but not as a coder. Maybe that's why this moment feels so bright: AI turned \"someday\" into \"ship it\" . That's far from the end of coding though—it's the start of more voices building what they wish existed",
+  description: "Even with only my friends using it, this app changed my world a little. It reminded me that the best products start with a real user problem. Building it taught me to listen closely, design around context, and make the experience feel natural instead of just functional.\n\nI've spent my whole career in tech, but not as a coder. Maybe that's why this moment feels so bright: AI turned \"someday\" into \"ship it\" . That's far from the end of coding though—it's the start of more voices building what they wish existed",
   content: <div className="h-full w-full bg-[linear-gradient(to_bottom_right,rgb(236_72_153),rgb(99_102_241))] flex items-center justify-center text-white rounded-lg p-6">
         <div className="text-center space-y-3">
           <Button variant="secondary" size="sm" asChild>
