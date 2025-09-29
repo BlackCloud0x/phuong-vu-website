@@ -24,14 +24,12 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex space-x-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-primary transition-smooth hover:bg-primary/20 rounded-full">
-              <Github className="w-5 h-5" />
-            </a>
+            
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-primary transition-smooth hover:bg-primary/20 rounded-full">
-              <Linkedin className="w-5 h-5" />
+              
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-primary transition-smooth hover:bg-primary/20 rounded-full">
-              <Twitter className="w-5 h-5" />
+              
             </a>
           </div>
         </div>
